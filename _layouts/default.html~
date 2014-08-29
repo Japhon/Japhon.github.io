@@ -16,7 +16,9 @@
     {% include footer.html %}
     
     <a id="J-backTop" href="#" class="toTop" style="position: fixed; bottom: 110px; left: 1043px;">
-      <i class="fa fa-chevron-up"></i>
+      <i class="fa fa-chevron-up">
+        ::before
+      </i>
     </a>
     
   </body>
