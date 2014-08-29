@@ -9,17 +9,20 @@
 }
 
 #headerout a {
+  color: #ddd;
   text-decoration: none;
-  color: #eee;
+}
+
+#headerout h4 {
+  color: #ddd;
 }
 
 #headerin {
-  padding: 50px 10px 30px 80px;
+  padding: 50px 10px 30px 10px;
 }
 
 #blogtitle {
-  color: #fff;
-  font-size: 50px;
+  font-size: 54px;
   font-weight: 700;
   font-family: 'Spirax', cursive;
   text-shadow: #111 0px 0px 10px;
@@ -34,7 +37,7 @@
 }
 .trigger {
   list-style: none;
-  width: 720px;
+  width: 780px;
   margin: 0 auto;
   line-height: 48px;
   height: 48px;
