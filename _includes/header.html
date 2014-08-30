@@ -16,15 +16,15 @@
         <a  href="/"> Home </a>
       </li>
       <li class="page-link">
-        <a href="/home_page"> Blog </a>
+        <a  href="/home_page"> Blog </a>
       </li>
-        {% for page in site.pages %}
-          {% if page.title %}
-          <li class="page-link">
-            <a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
-          </li>
-          {% endif %}
-        {% endfor %}
+      {% for page in site.pages %}
+        {% if page.title %}
+        <li class="page-link">
+          <a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
+        </li>
+        {% endif %}
+      {% endfor %}
     </div>
   </nav>
 </header>

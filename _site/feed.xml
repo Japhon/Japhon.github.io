@@ -5,52 +5,119 @@
     <description></description>
     <link>http://japhon.github.io/</link>
     <atom:link href="http://japhon.github.io/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Fri, 29 Aug 2014 17:44:02 +0800</pubDate>
-    <lastBuildDate>Fri, 29 Aug 2014 17:44:02 +0800</lastBuildDate>
+    <pubDate>Sat, 30 Aug 2014 17:00:54 +0800</pubDate>
+    <lastBuildDate>Sat, 30 Aug 2014 17:00:54 +0800</lastBuildDate>
     <generator>Jekyll v2.3.0</generator>
     
       <item>
-        <title>Hello world</title>
-        <description>&lt;p&gt;Hello!&lt;/p&gt;
+        <title>Ubuntu开Wifi给Android手机用</title>
+        <description>&lt;p&gt;之前在使用Ubuntu的时候总是有一个问题，就是我开的Wifi（参照网上参考的教程）我自己的Android手机没办法用，但是舍友的苹果手机就可以用。但是我自己的Android手机却不能用了。google了一下，发现Android的手机是不支持Ad-hoc架构的。下面就来解决这个问题。&lt;/p&gt;
 
-&lt;p&gt;你好！&lt;/p&gt;
+&lt;p&gt;下面这个方法也适用于校园网用户（好吧，反正我也不知道其他校园网能不能用），我是使用yah3c上网的，这个方法是可行的。然后在实验室直接IP地址上网也是可以的。其他的大家自己试试看咯。&lt;/p&gt;
+
+&lt;p&gt;注意：你的电脑的无线网卡必须支持Access Point (AP) mode，如果不支持的话一切都白搭。下面默认你是支持的，如果不支持的话请寻找有没有其他的解决方法。&lt;/p&gt;
+
+&lt;h4 id=&quot;b1b&quot;&gt;&lt;b&gt;第1步&lt;/b&gt;&lt;/h4&gt;
+
+&lt;p&gt;点击下载安装&lt;/p&gt;
+
+&lt;p&gt;请点这里→&lt;a href=&quot;apt://plasma-nm&quot;&gt;kde-nm-connection-editor&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h4 id=&quot;b2b&quot;&gt;&lt;b&gt;第2步&lt;/b&gt;&lt;/h4&gt;
+
+&lt;p&gt;在终端中输入&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;kde-nm-connection-editor
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;或在Alt+F2中搜索kde-nm-connection-editor并打开它&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/photo/Build-Wifi-For-Andoid/kde-connect-manager.png&quot; alt=&quot;kde-connect-manager&quot; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;b3b&quot;&gt;&lt;b&gt;第3步&lt;/b&gt;&lt;/h4&gt;
+
+&lt;p&gt;点击“添加”（Add）按钮，然后选择“Wireless (shared)”&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/photo/Build-Wifi-For-Andoid/create-wireless-point.png&quot; alt=&quot;create-wireless-point&quot; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;b4b&quot;&gt;&lt;b&gt;第4步&lt;/b&gt;&lt;/h4&gt;
+
+&lt;p&gt;输入“链接名”（connection name）和 “ssid”, 然后“模式”（mode）选择“Access Point”。 然后可以在“Wireless Security”这个选项卡中设置你的密码（可选）。最后点击“OK”.完成设置。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/photo/Build-Wifi-For-Andoid/create-wireless-point1.png&quot; alt=&quot;create-wireless-point1&quot; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;b5b&quot;&gt;&lt;b&gt;第5步&lt;/b&gt;&lt;/h4&gt;
+
+&lt;p&gt;在已经有线连接上网的情况下，点击“链接到隐藏的Wi-Fi网络” （Connect to Hidden Wi-Fi network）， 选择你之前设置的“链接名”。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/photo/Build-Wifi-For-Andoid/connect-to-wireless.png&quot; alt=&quot;connect-to-wireless&quot; /&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;b6b&quot;&gt;&lt;b&gt;第6步&lt;/b&gt;&lt;/h4&gt;
+
+&lt;p&gt;最后，你的链接菜单应该就像下图这样。&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/photo/Build-Wifi-For-Andoid/wifi-hotspot-connected.png&quot; alt=&quot;wifi-hotspot-connected&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;这时所有的步骤都完成了，用你的Android手机链接你的Wifi试一试吧！&lt;/p&gt;
+
+&lt;p&gt;参考的地址&lt;a href=&quot;http://ubuntuhandbook.org/index.php/2014/06/share-internet-with-android-ubuntu-1404/&quot;&gt;Share Internet Connection With Android in Ubuntu 14.04&lt;/a&gt;我只是把网页中大概介绍的步骤提取出来，顺便翻译成中文，供大家参考。&lt;/p&gt;
 </description>
-        <pubDate>Sun, 24 Aug 2014 23:57:32 +0800</pubDate>
-        <link>http://japhon.github.io/jekyll/update/2014/08/24/Hello-world.html</link>
-        <guid isPermaLink="true">http://japhon.github.io/jekyll/update/2014/08/24/Hello-world.html</guid>
+        <pubDate>Thu, 28 Aug 2014 23:12:55 +0800</pubDate>
+        <link>http://japhon.github.io/ubuntu/2014/08/28/Build-Wifi-For-Andoid.html</link>
+        <guid isPermaLink="true">http://japhon.github.io/ubuntu/2014/08/28/Build-Wifi-For-Andoid.html</guid>
         
         
-        <category>jekyll</category>
-        
-        <category>update</category>
+        <category>ubuntu</category>
         
       </item>
     
       <item>
-        <title>Welcome to Jekyll!</title>
-        <description>&lt;p&gt;You’ll find this post in your &lt;code&gt;_posts&lt;/code&gt; directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run &lt;code&gt;jekyll serve --watch&lt;/code&gt;, which launches a web server and auto-regenerates your site when a file is updated.&lt;/p&gt;
+        <title>Windows可以上网但Ubuntu上不了</title>
+        <description>&lt;p&gt;同样一根网线，没有插拔，在win7下面可以正常使用，但是在Ubuntu下面就没法使用了（灯都不亮）。&lt;/p&gt;
 
-&lt;p&gt;To add new posts, simply add a file in the &lt;code&gt;_posts&lt;/code&gt; directory that follows the convention &lt;code&gt;YYYY-MM-DD-name-of-post.ext&lt;/code&gt; and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.&lt;/p&gt;
+&lt;p&gt;首先排除连接的问题，因为win7下面是可以正常上网的。所以不妨尝试一下重设端口。&lt;/p&gt;
 
-&lt;p&gt;Jekyll also offers powerful support for code snippets:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;sudo ifconfig eth0 down
+sudo ifconfig eth0 up
+sudo mii-tool -F 10baseT-HD eth0
+&lt;/code&gt;&lt;/pre&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-  &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Hi, &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&amp;quot;&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;Tom&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;#=&amp;gt; prints &amp;#39;Hi, Tom&amp;#39; to STDOUT.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;正常情况下在执行第一句后灯会亮起，执行第二句后灯会熄灭，执行第三句后会重新亮起，然后就可以正常使用了。&lt;/p&gt;
 
-&lt;p&gt;Check out the &lt;a href=&quot;http://jekyllrb.com&quot;&gt;Jekyll docs&lt;/a&gt; for more info on how to get the most out of Jekyll. File all bugs/feature requests at &lt;a href=&quot;https://github.com/jekyll/jekyll&quot;&gt;Jekyll’s GitHub repo&lt;/a&gt;. If you have questions, you can ask them on &lt;a href=&quot;https://github.com/jekyll/jekyll-help&quot;&gt;Jekyll’s dedicated Help repository&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;但是这种方法每一次重启都需要重新打这三行，如果觉得麻烦可以把它写入开机脚本，这里不详述。&lt;/p&gt;
+</description>
+        <pubDate>Wed, 27 Aug 2014 23:32:24 +0800</pubDate>
+        <link>http://japhon.github.io/ubuntu/2014/08/27/Reset-Network.html</link>
+        <guid isPermaLink="true">http://japhon.github.io/ubuntu/2014/08/27/Reset-Network.html</guid>
+        
+        
+        <category>ubuntu</category>
+        
+      </item>
+    
+      <item>
+        <title>Hello world</title>
+        <description>&lt;p&gt;搭建了这样一个写博客的平台，对于一个非技术宅来说真的有太多的不容易了，总算看到了一些像模像样的成果，真的想大声地对世界说一声：“Hello world!”真有点小开心，小激动呢。&lt;/p&gt;
+
+&lt;p&gt;参考了&lt;a href=&quot;https://github.com/Japhon&quot;&gt;github&lt;/a&gt;上面很多人的博客，一时还没有全部注明出处，因为太乱太杂了，稍后会补充上去。如果还未及时注明的请及时&lt;a href=&quot;&amp;#109;&amp;#097;&amp;#105;&amp;#108;&amp;#116;&amp;#111;:&amp;#115;&amp;#121;&amp;#115;&amp;#117;&amp;#046;&amp;#122;&amp;#104;&amp;#117;&amp;#097;&amp;#110;&amp;#103;&amp;#064;&amp;#103;&amp;#097;&amp;#109;&amp;#105;&amp;#108;&amp;#046;&amp;#099;&amp;#111;&amp;#109;&quot;&gt;Email&lt;/a&gt;告诉我！&lt;/p&gt;
+
+&lt;p&gt;这个博客打算用来分享一些我经历过的东西，作为一个非技术宅，分享一些菜鸟的所见所闻。当然不一定都是技术或者学习的，吃喝玩乐的我觉得有意思的东西，也许我也会PO上来。&lt;/p&gt;
+
+&lt;p&gt;刚刚搭建起来的博客，用的是&lt;a href=&quot;http://jekyllrb.com&quot;&gt;jekyll&lt;/a&gt;的框架。里面的各种部件和设计比较多还是参考&lt;a href=&quot;http://jekyllrb.com&quot;&gt;jekyll&lt;/a&gt;以及它给出的一些模版，有一些则因为自己有一些想法，然后就去&lt;a href=&quot;https://github.com/Japhon&quot;&gt;github&lt;/a&gt;上面找了有相似的实现，配合自己的想法改了改。代码在&lt;a href=&quot;https://github.com/Japhon&quot;&gt;github&lt;/a&gt;上面都有，如果大家喜欢我博客的这种样式，尽管拿去用，&lt;/p&gt;
+
+&lt;p&gt;还有很多东西要补充进去，例如站内搜索，例如评论区，例如……我又学到什么意思的东西如果用得上没准就会拿来用。欢迎大家交流！&lt;/p&gt;
+
+&lt;p&gt;谢谢大家！&lt;/p&gt;
 
 </description>
-        <pubDate>Sun, 24 Aug 2014 20:02:42 +0800</pubDate>
-        <link>http://japhon.github.io/jekyll/update/2014/08/24/welcome-to-jekyll.html</link>
-        <guid isPermaLink="true">http://japhon.github.io/jekyll/update/2014/08/24/welcome-to-jekyll.html</guid>
+        <pubDate>Sun, 24 Aug 2014 23:57:32 +0800</pubDate>
+        <link>http://japhon.github.io/say/hello/2014/08/24/Hello-world.html</link>
+        <guid isPermaLink="true">http://japhon.github.io/say/hello/2014/08/24/Hello-world.html</guid>
         
         
-        <category>jekyll</category>
+        <category>say</category>
         
-        <category>update</category>
+        <category>hello</category>
         
       </item>
     

@@ -84,16 +84,6 @@
     }
 }
 
-@include media-query($on-palm) {
-    .footer-col {
-        float: none;
-        width: -webkit-calc(100% - (#{$spacing-unit} / 2));
-        width:         calc(100% - (#{$spacing-unit} / 2));
-    }
-}
-
-
-
 /**
  * Page content
  */
@@ -102,7 +92,7 @@
 }
 
 .page-heading {
-    font-size: 20px;
+    font-size: 32px;
 }
 
 .post-list {
@@ -139,7 +129,7 @@
     line-height: 1;
 
     @include media-query($on-laptop) {
-        font-size: 36px;
+        font-size: 40px;
     }
 }
 
@@ -147,26 +137,26 @@
     margin-bottom: $spacing-unit;
 
     h2 {
-        font-size: 32px;
+        font-size: 36px;
 
         @include media-query($on-laptop) {
-            font-size: 28px;
+            font-size: 32px;
         }
     }
 
     h3 {
-        font-size: 26px;
+        font-size: 30px;
 
         @include media-query($on-laptop) {
-            font-size: 22px;
+            font-size: 26px;
         }
     }
 
     h4 {
-        font-size: 20px;
+        font-size: 24px;
 
         @include media-query($on-laptop) {
-            font-size: 18px;
+            font-size: 22px;
         }
     }
 }

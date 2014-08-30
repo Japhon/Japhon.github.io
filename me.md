@@ -3,13 +3,13 @@ layout: page
 title: About
 permalink: /about/
 ---
-![About me](/photo/me.jpg)
+####姓名： 庄泽帆
 
-##庄泽帆 Japhon Zhuang
+####Name： Japhon Zhuang
 
 ####受教育程度
 
-毕业于汕头市第一中学。现就读于中山大学软件学院。
+现就读于中山大学软件学院，数字媒体方向。
 
 ####喜欢打代码
 
@@ -25,6 +25,10 @@ permalink: /about/
 
 ####联系方式
 
-email:sysu.zhuang@gmail.com
+email: sysu.zhuang@gmail.com
 
+####PO上鄙人挫照一张
 
+反正没人看，反正没人看，反正没人看……
+
+![About me](/photo/me.jpg)

@@ -18,3 +18,46 @@ a.toTop:hover {
   vertical-align: top;
 }
 
+#post-pagination div {
+  float: left;
+}
+
+.previous a, span, .next a, span {
+  display: block;
+  line-height: 32px;
+  padding: 0 10px;
+  color: #999
+  background: #618;
+  background: rgba(0, 0, 0, 0);
+  border-radius: 5px;
+  -webkit-transition: background .4s ease-in-out;
+  -moz-transition: background .4s ease-in-out;
+  -ms-transition: background .4s ease-in-out;
+  -o-transition: background .4s ease-in-out;
+  transition: background .4s ease-in-out;
+}
+.pages a {
+  display: block;
+  line-height: 32px;
+  padding: 0 10px;
+  border-radius: 3px 3px;
+  background: rgba(0, 0, 0, 0);
+  color: #897;
+  font-size: 14px;
+  -webkit-transition: background .4s ease-in-out;
+  -moz-transition: background .4s ease-in-out;
+  -ms-transition: background .4s ease-in-out;
+  -o-transition: background .4s ease-in-out;
+  transition: background .4s ease-in-out;
+}
+.pages span {
+  display: block;
+  line-height: 32px;
+  padding: 0 10px;
+  color: #449;
+}
+.previous a:hover, .next a:hover,
+.previous-active a, .next-active a{
+  background: rgba(0,0,0,0.5);
+  text-decoration: none;
+}

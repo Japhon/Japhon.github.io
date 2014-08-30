@@ -1,3 +1,7 @@
 #footerout {
   background: #212121;
+  color: #999;
+}
+#footerout a:hover {
+  color: #fff;
 }
