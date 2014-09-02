@@ -7,6 +7,9 @@ a.toTop {
   text-align: center;
   border-radius: 3px 3px;
   background: rgba(0, 0, 0, 0.8);
+  position: fixed;
+  bottom: 5px;
+  right: 5px;
 }
 a.toTop:hover {
   background: #0088cc;
@@ -22,7 +25,7 @@ a.toTop:hover {
   float: left;
 }
 
-.previous a, span, .next a,span {
+.previous a, span, .next a, span {
   display: block;
   line-height: 32px;
   padding: 0 10px;

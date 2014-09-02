@@ -28,3 +28,5 @@ paginate_path: "home_page/page:num"
 
 twitter_username: japhonZ
 github_username:  japhon
+
+search: true

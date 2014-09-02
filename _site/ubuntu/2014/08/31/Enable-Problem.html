@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>禁用“检测到系统程序出现问题”弹窗</title>
+    <meta name="description" content="">
+    
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="canonical" href="http://japhon.github.io/ubuntu/2014/08/31/Enable-Problem.html">
+    <link rel="stylesheet" href="/media/css/header.css" type="text/css">
+    <link rel="stylesheet" href="/media/css/footer.css" type="text/css">
+    <link rel="stylesheet" href="/media/css/style.css" type="text/css">
+    <link rel="stylesheet" href="/media/css/forsearch.css" type="text/css">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Spirax" type="text/css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
+</head>
+
+
+  <body>
+
+    <header class="site-header" id="headerout">
+
+  <div class="wrapper" id="headerin">    
+    <a class="site-title" href="/"></a>
+    <h1 id="blogtitle">
+      <a href="/home_page">
+        Japhon's Blog
+      </a>
+    </h1>
+    <h4>continue to modify</h4>    
+  </div>
+
+  <nav class="site-nav" id="navconf">
+    <div class="trigger">
+      <li class="page-link">
+        <a  href="/"> Home </a>
+      </li>
+      <li class="page-link">
+        <a  href="/home_page"> Blog </a>
+      </li>
+      
+        
+      
+        
+      
+        
+      
+        
+        <li class="page-link">
+          <a href="/about/">About</a>
+        </li>
+        
+      
+    </div>
+  </nav>
+</header>
+
+    <section class="main" id="mainouter">
+      <div class="page-content" id="maincontainer">
+        <div class="wrapper">
+          <!--For which is post-->
+<div class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">禁用“检测到系统程序出现问题”弹窗</h1>
+    <p class="post-meta" id="date-more">Aug 31, 2014</p>
+  </header>
+
+  <article class="post-content">
+    <p>安装了Ubuntu之后，一般更新一下软件，重启一下Ubuntu都会出现类似于“检测到系统程序出现问题”的提示。</p>
+
+<p>一开始我总会看一下到底是什么问题，然后把问题cp到google里面搜索一下尝试解决。但是慢慢的发现有一些是它系统内部的错误，暂时是没办法避免的，需要等它更新才可能解决。但是放任不管的话，一开机就弹出那个“检测到系统程序出现问题”的窗口又让人有些不爽。</p>
+
+<p>所以想到把那个窗口给禁用掉。</p>
+
+<p>在终端中打开apport</p>
+
+<pre><code>sudo gedit /etc/default/apport
+</code></pre>
+
+<p>在里面找到下面语句</p>
+
+<pre><code>enabled=1
+</code></pre>
+
+<p>修改成</p>
+
+<pre><code>enabled=0
+</code></pre>
+
+<p>重启一下Ubuntu试一试。</p>
+
+<p>当然这种方法还是属于治标不治本的，最好的方法当然可以把它所提示的错误解决掉。</p>
+
+  </article>
+  
+  <nav class="pagination fn-clear" id="violet-paging">
+    <div class="pagination-list">
+      
+      <a class="prev" href="/ubuntu/2014/08/31/Use-Fn.html" rel="bookmark"><i class="fa fa-chevron-circle-left"></i> 上一篇： 使用Fn调节Ubuntu屏幕亮度</a>
+      
+      <br />
+      
+    </div>
+  </nav>
+</div>
+
+        </div>
+      </div>
+    </section>
+    <footer class="site-footer" id="footerout">
+  <div class="wrapper">
+  <center>Theme and code modified by <a href="https://github.com/japhon">Japhon</a>. </center>
+  <center>Hosted by <a href="https://github.com">GitHub</a> and powered by <a href="http://jekyllrb.com">Jekyll</a>.</center>
+  <center>Refrenced by <a href="http://1994.mobi/">Jo Jiang</a>, <a href="http://pizn.github.io/">Violet</a></center>
+  </div>
+</footer>
+
+    
+    <a id="J-backTop" href="#" class="toTop">
+      <i class="fa fa-chevron-up"></i>
+    </a>
+    
+  </body>
+</html>

@@ -4,7 +4,7 @@ layout: default
 <!--For the catalogue-->
 
 <div class="home">
-  <h1 class="page-heading">Catalogue</h1>
+  <h1 class="page-heading">---目录---</h1>
   <!-- 遍历分页后的文章 -->
   {% for post in paginator.posts %}
     <li>
@@ -14,6 +14,7 @@ layout: default
       </h2>
     </li>
   {% endfor %}
+  
   <!-- 分页链接 -->
   <div id="post-pagination" class="pagination">
     {% if paginator.previous_page %}

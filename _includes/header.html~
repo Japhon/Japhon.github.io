@@ -7,7 +7,7 @@
         Japhon's Blog
       </a>
     </h1>
-    <h4>continue to modify</h4>
+    <h4>continue to modify</h4>    
   </div>
 
   <nav class="site-nav" id="navconf">
@@ -18,9 +18,22 @@
       <li class="page-link">
         <a  href="/home_page"> Blog </a>
       </li>
-      <li class="page-link">
-        <a href="/About">About</a>
-      </li>
+      {% for page in site.pages %}
+        {% if page.title %}
+        <li class="page-link">
+          <a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
+        </li>
+        {% endif %}
+      {% endfor %}
     </div>
   </nav>
+  
+  
+  <div class="search-wrapper">
+    <div class="search-form">
+        <input type="text" class="search-field" placeholder="Search...">
+        <i class="icon-remove-sign"></i>
+        <ul class="search-results post-list"></ul><!-- /.search-results -->
+    </div><!-- /.search-form -->
+</div><!-- ./search-wrapper -->
 </header>

@@ -128,17 +128,18 @@ pre,
 code {
     font-size: 18px;
     border: 1px solid $grey-color-light;
-    border-radius: 6px;
-    background-color: #dde;
+    border-radius: 4px;
+    background-color: #555;
 }
 
 code {
     padding: 1px 5px;
+    color: #ddd;
 }
 
 pre {
-    padding: 8px 12px;
-    overflow-x: scroll;
+    padding: 15px 20px;
+    overflow-x: auto;
 
     > code {
         border: 0;

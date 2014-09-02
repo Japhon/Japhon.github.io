@@ -5,9 +5,95 @@
     <description></description>
     <link>http://japhon.github.io/</link>
     <atom:link href="http://japhon.github.io/feed.xml" rel="self" type="application/rss+xml" />
-    <pubDate>Sat, 30 Aug 2014 17:00:54 +0800</pubDate>
-    <lastBuildDate>Sat, 30 Aug 2014 17:00:54 +0800</lastBuildDate>
+    <pubDate>Tue, 02 Sep 2014 14:00:50 +0800</pubDate>
+    <lastBuildDate>Tue, 02 Sep 2014 14:00:50 +0800</lastBuildDate>
     <generator>Jekyll v2.3.0</generator>
+    
+      <item>
+        <title>禁用“检测到系统程序出现问题”弹窗</title>
+        <description>&lt;p&gt;安装了Ubuntu之后，一般更新一下软件，重启一下Ubuntu都会出现类似于“检测到系统程序出现问题”的提示。&lt;/p&gt;
+
+&lt;p&gt;一开始我总会看一下到底是什么问题，然后把问题cp到google里面搜索一下尝试解决。但是慢慢的发现有一些是它系统内部的错误，暂时是没办法避免的，需要等它更新才可能解决。但是放任不管的话，一开机就弹出那个“检测到系统程序出现问题”的窗口又让人有些不爽。&lt;/p&gt;
+
+&lt;p&gt;所以想到把那个窗口给禁用掉。&lt;/p&gt;
+
+&lt;p&gt;在终端中打开apport&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo gedit /etc/default/apport
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;在里面找到下面语句&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;enabled=1
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;修改成&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;enabled=0
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;重启一下Ubuntu试一试。&lt;/p&gt;
+
+&lt;p&gt;当然这种方法还是属于治标不治本的，最好的方法当然可以把它所提示的错误解决掉。&lt;/p&gt;
+</description>
+        <pubDate>Sun, 31 Aug 2014 19:08:31 +0800</pubDate>
+        <link>http://japhon.github.io/ubuntu/2014/08/31/Enable-Problem.html</link>
+        <guid isPermaLink="true">http://japhon.github.io/ubuntu/2014/08/31/Enable-Problem.html</guid>
+        
+        
+        <category>ubuntu</category>
+        
+      </item>
+    
+      <item>
+        <title>使用Fn调节Ubuntu屏幕亮度</title>
+        <description>&lt;p&gt;重装了Ubuntu之后发现是调节不了屏幕亮度的，使用Fn快捷键的时候，上面的亮度条会改变，但是屏幕亮度依然没有改变。使用命令行的调节命令也没有作用。&lt;/p&gt;
+
+&lt;p&gt;怎么样才能和Windows一样使用Fn快捷键也可以直接调节亮度呢？&lt;/p&gt;
+
+&lt;p&gt;首先修改GRUB（12.04与14.04亲试可用）&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo gedit /etc/default/grub
+GRUB_CMDLINE_LINUX_DEFAULT=&quot;quiet splash&quot;
+GRUB_CMDLINE_LINUX=&quot;acpi_backlight=vendor&quot;
+##  原来好像是GRUB_CMDLINE_LINUX=&quot;&quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;注意，如果是13.04版本，第二行改成&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;GRUB_CMDLINE_LINUX=&quot;acpi_osi=Linux&quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;然后升级一下GRUB&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo update-grub
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;这样就可以了。&lt;/p&gt;
+
+&lt;p&gt;如果还想开机就调节屏幕的亮度的话，还是需要在rc.local中调节&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo gedit /etc/rc.local
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;打开rc.local之后，在后面加上&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;echo 500 &amp;gt; /sys/class/backlight/intel_backlight/brightness
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;注意，如果有exit 0的话上面这一句要加再exit 0前面。&lt;/p&gt;
+
+&lt;p&gt;然后重启Ubuntu看看效果。&lt;/p&gt;
+
+</description>
+        <pubDate>Sun, 31 Aug 2014 18:31:20 +0800</pubDate>
+        <link>http://japhon.github.io/ubuntu/2014/08/31/Use-Fn.html</link>
+        <guid isPermaLink="true">http://japhon.github.io/ubuntu/2014/08/31/Use-Fn.html</guid>
+        
+        
+        <category>ubuntu</category>
+        
+      </item>
     
       <item>
         <title>Ubuntu开Wifi给Android手机用</title>
@@ -111,11 +197,9 @@ sudo mii-tool -F 10baseT-HD eth0
 
 </description>
         <pubDate>Sun, 24 Aug 2014 23:57:32 +0800</pubDate>
-        <link>http://japhon.github.io/say/hello/2014/08/24/Hello-world.html</link>
-        <guid isPermaLink="true">http://japhon.github.io/say/hello/2014/08/24/Hello-world.html</guid>
+        <link>http://japhon.github.io/hello/2014/08/24/Hello-world.html</link>
+        <guid isPermaLink="true">http://japhon.github.io/hello/2014/08/24/Hello-world.html</guid>
         
-        
-        <category>say</category>
         
         <category>hello</category>
         
