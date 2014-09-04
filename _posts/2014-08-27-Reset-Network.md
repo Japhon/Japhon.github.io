@@ -3,6 +3,8 @@ layout: post
 title: Windows可以上网但Ubuntu上不了
 date:   2014-08-27 15:32:24
 categories: Ubuntu
+dsid: 0002
+abstract: 同样一根网线，没有插拔，在win7下面可以正常使用，但是在Ubuntu下面就没法使用了（灯都不亮）。
 ---
 
 同样一根网线，没有插拔，在win7下面可以正常使用，但是在Ubuntu下面就没法使用了（灯都不亮）。

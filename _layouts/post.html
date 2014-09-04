@@ -5,8 +5,10 @@ layout: default
 <div class="post">
 
   <header class="post-header">
-    <h1 class="post-title">{{ page.title }}</h1>
-    <p class="post-meta" id="date-more">{{ page.date | date: "%b %-d, %Y" }}{% if page.author %} • {{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}</p>
+    <center>
+      <h1 class="post-title">{{ page.title }}</h1>
+      <p class="post-meta" id="date-more">{{ page.date | date: "%b %-d, %Y" }}{% if page.author %} • {{ page.author }}{% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}</p>
+    </center>
   </header>
 
   <article class="post-content">
@@ -24,4 +26,9 @@ layout: default
       {% endif %}
     </div>
   </nav>
+  
+  <!-- 多说评论框 start -->
+	  <div class="ds-thread" data-thread-key="{{ page.dsid }}" data-title="{{ page.title }}" data-url="{{ page.url }}"></div>
+  <!-- 多说评论框 end -->
+  
 </div>

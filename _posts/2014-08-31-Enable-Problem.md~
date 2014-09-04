@@ -3,6 +3,7 @@ layout: post
 title: 禁用“检测到系统程序出现问题”弹窗
 date:   2014-08-31 11:08:31
 categories: Ubuntu
+dsid: 0004
 ---
 
 安装了Ubuntu之后，一般更新一下软件，重启一下Ubuntu都会出现类似于“检测到系统程序出现问题”的提示。

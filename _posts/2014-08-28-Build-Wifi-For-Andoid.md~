@@ -3,6 +3,7 @@ layout: post
 title: Ubuntu开Wifi给Android手机用
 date:   2014-08-28 15:12:55
 categories: Ubuntu
+dsid: 0003
 ---
 
 之前在使用Ubuntu的时候总是有一个问题，就是我开的Wifi（参照网上参考的教程）我自己的Android手机没办法用，但是舍友的苹果手机就可以用。但是我自己的Android手机却不能用了。google了一下，发现Android的手机是不支持Ad-hoc架构的。下面就来解决这个问题。
@@ -11,13 +12,13 @@ categories: Ubuntu
 
 注意：你的电脑的无线网卡必须支持Access Point (AP) mode，如果不支持的话一切都白搭。下面默认你是支持的，如果不支持的话请寻找有没有其他的解决方法。
 
-####<b>第1步</b>-------
+####<b>第1步</b>
 
 点击下载安装
 
 请点这里→[kde-nm-connection-editor](apt://plasma-nm).
 
-####<b>第2步</b>-------
+####<b>第2步</b>
 
 在终端中输入
 

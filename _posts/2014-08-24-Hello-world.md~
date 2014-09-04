@@ -2,7 +2,7 @@
 layout: post
 title:  "Hello world"
 date:   2014-08-24 15:57:32
-categories: Say hello
+categories: Hello
 ---
 
 搭建了这样一个写博客的平台，对于一个非技术宅来说真的有太多的不容易了，总算看到了一些像模像样的成果，真的想大声地对世界说一声：“Hello world!”真有点小开心，小激动呢。

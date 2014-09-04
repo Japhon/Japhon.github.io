@@ -21,6 +21,10 @@ a.toTop:hover {
   line-height: 40px;
   vertical-align: top;
 }
+/*去掉小黑点*/
+li {
+  list-style-type:none;
+}
 
 #post-pagination div {
   float: left;
@@ -60,8 +64,21 @@ a.toTop:hover {
   padding: 0 10px;
   color: #449;
 }
-.previous a:hover, .next a:hover,
-.previous-active a, .next-active a{
-  background: rgba(0,0,0,0.5);
-  text-decoration: none;
+
+/*字体及颜色*/
+body {
+  font-family: 'Merriweather', serif;
+}
+
+/*目录后空行*/
+.home h2 {
+  margin-bottom: 0;
+}
+
+.home li {
+  margin-bottom: 50px;
+}
+/*页面上边距和下边距*/
+.wrapper {
+  padding: 40px 0;
 }

@@ -111,7 +111,7 @@
 
 .post-link {
     display: block;
-    font-size: 24px;
+    font-size: 40px;
 }
 
 
@@ -124,12 +124,12 @@
 }
 
 .post-title {
-    font-size: 42px;
+    font-size: 34px;
     letter-spacing: -1px;
     line-height: 1;
 
     @include media-query($on-laptop) {
-        font-size: 40px;
+        font-size: 32px;
     }
 }
 
@@ -137,14 +137,6 @@
     margin-bottom: $spacing-unit;
 
     h2 {
-        font-size: 36px;
-
-        @include media-query($on-laptop) {
-            font-size: 32px;
-        }
-    }
-
-    h3 {
         font-size: 30px;
 
         @include media-query($on-laptop) {
@@ -152,11 +144,19 @@
         }
     }
 
-    h4 {
-        font-size: 24px;
+    h3 {
+        font-size: 26px;
 
         @include media-query($on-laptop) {
-            font-size: 22px;
+            font-size: 23px;
+        }
+    }
+
+    h4 {
+        font-size: 22px;
+
+        @include media-query($on-laptop) {
+            font-size: 20px;
         }
     }
 }
