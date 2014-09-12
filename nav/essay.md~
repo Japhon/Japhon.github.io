@@ -1,16 +1,16 @@
 ---
 layout: default
-title: 生活
+title: 杂文
 ---
 
-<div class="home cc">
+<div class="home bb">
   <div class="introhead">
     <h1 class="page-heading"></h1>
     <img class="intro" src="/photo/portrait.jpg" width="85" height="85" />
-    <p class="intro"><i>Japhon是一个热爱生活的人。生活中总会有很多有趣的事情。开心其实很简单，有时候可能是因为一餐饭，有时候可能是因为一首歌，有时候可能是因为一个眼神，有时候可能是因为旅行途中的一点小感动。生活就是要这样，平平凡凡，在简简单单中寻找快乐。你觉得呢？</i></p>
+    <p class="intro"><i>Japhon是一个很喜欢把自己的想法和大家分享的人。有时候看到新闻或者一些资讯，都免不了自己赞同或者吐槽一番。我希望在吐槽的时候也可以听一听大家的看法。如果大家看了文章觉得很有同感的话，需要转载的话，如果能注明一下出处，那就再好不过了！谢谢大家！</i></p>
   </div>
   <hr />
-  {% for post in site.categories.life %}
+  {% for post in site.categories.essay %}
     <a href="{{ post.url | prepend: site.baseurl }}">
       <li>
         <h2>

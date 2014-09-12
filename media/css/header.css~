@@ -37,7 +37,7 @@
 }
 .trigger {
   list-style: none;
-  width: 500px; /*增加nav时改大这里*/
+  width: 480px; /*增加nav时改大这里*/
   margin: 0 auto;
   line-height: 48px;
   height: 48px;

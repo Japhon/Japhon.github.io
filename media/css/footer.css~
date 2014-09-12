@@ -5,3 +5,6 @@
 #footerout a:hover {
   color: #fff;
 }
+#footerout div {
+  padding: 0;
+}

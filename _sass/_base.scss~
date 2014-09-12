@@ -97,7 +97,8 @@ a {
 
     &:hover {
         color: $text-color;
-        text-decoration: underline;
+        text-decoration: none;
+        border: medium double rgb(250,0,255);
     }
 }
 

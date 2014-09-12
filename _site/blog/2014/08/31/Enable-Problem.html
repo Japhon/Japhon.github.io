@@ -6,11 +6,11 @@
     <meta name="viewport" content="width=device-width">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>Windows可以上网但Ubuntu上不了</title>
+    <title>禁用“检测到系统程序出现问题”弹窗</title>
     <meta name="description" content="">
     
     <link rel="stylesheet" href="/css/main.css">
-    <link rel="canonical" href="http://japhon.github.io/ubuntu/2014/08/27/Reset-Network.html">
+    <link rel="canonical" href="http://japhon.github.io/blog/2014/08/31/Enable-Problem.html">
     <link rel="stylesheet" href="/media/css/header.css" type="text/css">
     <link rel="stylesheet" href="/media/css/footer.css" type="text/css">
     <link rel="stylesheet" href="/media/css/style.css" type="text/css">
@@ -77,39 +77,53 @@
 
   <header class="post-header">
     <center>
-      <h1 class="post-title">Windows可以上网但Ubuntu上不了</h1>
-      <p class="post-meta" id="date-more">Aug 27, 2014</p>
+      <h1 class="post-title">禁用“检测到系统程序出现问题”弹窗</h1>
+      <p class="post-meta" id="date-more">Aug 31, 2014</p>
     </center>
   </header>
 
   <article class="post-content">
-    <p>同样一根网线，没有插拔，在win7下面可以正常使用，但是在Ubuntu下面就没法使用了（灯都不亮）。</p>
+    <p>安装了Ubuntu之后，一般更新一下软件，重启一下Ubuntu都会出现类似于“检测到系统程序出现问题”的提示。</p>
 
-<p>首先排除连接的问题，因为win7下面是可以正常上网的。所以不妨尝试一下重设端口。</p>
+<p>一开始我总会看一下到底是什么问题，然后把问题cp到google里面搜索一下尝试解决。但是慢慢的发现有一些是它系统内部的错误，暂时是没办法避免的，需要等它更新才可能解决。但是放任不管的话，一开机就弹出那个“检测到系统程序出现问题”的窗口又让人有些不爽。</p>
 
-<pre><code>sudo ifconfig eth0 down
-sudo ifconfig eth0 up
-sudo mii-tool -F 10baseT-HD eth0
+<p>所以想到把那个窗口给禁用掉。</p>
+
+<p>在终端中打开apport</p>
+
+<pre><code>sudo gedit /etc/default/apport
 </code></pre>
 
-<p>正常情况下在执行第一句后灯会亮起，执行第二句后灯会熄灭，执行第三句后会重新亮起，然后就可以正常使用了。</p>
+<p>在里面找到下面语句</p>
 
-<p>但是这种方法每一次重启都需要重新打这三行，如果觉得麻烦可以把它写入开机脚本，这里不详述。</p>
+<pre><code>enabled=1
+</code></pre>
+
+<p>修改成</p>
+
+<pre><code>enabled=0
+</code></pre>
+
+<p>重启一下Ubuntu试一试。</p>
+
+<p>当然这种方法还是属于治标不治本的，最好的方法当然可以把它所提示的错误解决掉。</p>
 
   </article>
   
   <nav class="pagination fn-clear" id="violet-paging">
     <div class="pagination-list">
       
+      <a class="prev" href="/blog/2014/08/31/Use-Fn.html" rel="bookmark"><i class="fa fa-chevron-circle-left"></i> 上一篇： 使用Fn调节Ubuntu屏幕亮度</a>
+      
       <br />
       
-      <a class="next" href="/ubuntu/2014/08/28/Build-Wifi-For-Andoid.html" rel="bookmark"><i class="fa fa-chevron-circle-right"></i> 下一篇： Ubuntu开Wifi给Android手机用</a>
+      <a class="next" href="/essay/2014/09/03/Whether-Meizu.html" rel="bookmark"><i class="fa fa-chevron-circle-right"></i> 下一篇： 魅族MX4到底值不值？</a>
       
     </div>
   </nav>
   
   <!-- 多说评论框 start -->
-	  <div class="ds-thread" data-thread-key="2" data-title="Windows可以上网但Ubuntu上不了" data-url="/ubuntu/2014/08/27/Reset-Network.html"></div>
+	  <div class="ds-thread" data-thread-key="4" data-title="禁用“检测到系统程序出现问题”弹窗" data-url="/blog/2014/08/31/Enable-Problem.html"></div>
   <!-- 多说评论框 end -->
   
 </div>
@@ -119,8 +133,7 @@ sudo mii-tool -F 10baseT-HD eth0
     </section>
     <footer class="site-footer" id="footerout">
   <div class="wrapper">
-  <center><a href="https://github.com/japhon">Japhon</a> &copy; 2014 &bull; All rights reserved.</center>
-  <center>Hosted by <a href="https://github.com">GitHub</a> and powered by <a href="http://jekyllrb.com">Jekyll</a>.</center>
+  <center><a href="https://github.com/japhon">Japhon</a> &copy; 2014 &bull; All rights reserved. Hosted by <a href="https://github.com">GitHub</a> and powered by <a href="http://jekyllrb.com">Jekyll</a>.</center>
   </div>
 </footer>
 

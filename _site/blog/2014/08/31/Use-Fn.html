@@ -6,11 +6,11 @@
     <meta name="viewport" content="width=device-width">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>禁用“检测到系统程序出现问题”弹窗</title>
+    <title>使用Fn调节Ubuntu屏幕亮度</title>
     <meta name="description" content="">
     
     <link rel="stylesheet" href="/css/main.css">
-    <link rel="canonical" href="http://japhon.github.io/ubuntu/2014/08/31/Enable-Problem.html">
+    <link rel="canonical" href="http://japhon.github.io/blog/2014/08/31/Use-Fn.html">
     <link rel="stylesheet" href="/media/css/header.css" type="text/css">
     <link rel="stylesheet" href="/media/css/footer.css" type="text/css">
     <link rel="stylesheet" href="/media/css/style.css" type="text/css">
@@ -77,53 +77,67 @@
 
   <header class="post-header">
     <center>
-      <h1 class="post-title">禁用“检测到系统程序出现问题”弹窗</h1>
+      <h1 class="post-title">使用Fn调节Ubuntu屏幕亮度</h1>
       <p class="post-meta" id="date-more">Aug 31, 2014</p>
     </center>
   </header>
 
   <article class="post-content">
-    <p>安装了Ubuntu之后，一般更新一下软件，重启一下Ubuntu都会出现类似于“检测到系统程序出现问题”的提示。</p>
+    <p>重装了Ubuntu之后发现是调节不了屏幕亮度的，使用Fn快捷键的时候，上面的亮度条会改变，但是屏幕亮度依然没有改变。使用命令行的调节命令也没有作用。</p>
 
-<p>一开始我总会看一下到底是什么问题，然后把问题cp到google里面搜索一下尝试解决。但是慢慢的发现有一些是它系统内部的错误，暂时是没办法避免的，需要等它更新才可能解决。但是放任不管的话，一开机就弹出那个“检测到系统程序出现问题”的窗口又让人有些不爽。</p>
+<p>怎么样才能和Windows一样使用Fn快捷键也可以直接调节亮度呢？</p>
 
-<p>所以想到把那个窗口给禁用掉。</p>
+<p>首先修改GRUB（12.04与14.04亲试可用）</p>
 
-<p>在终端中打开apport</p>
-
-<pre><code>sudo gedit /etc/default/apport
+<pre><code>sudo gedit /etc/default/grub
+GRUB_CMDLINE_LINUX_DEFAULT="quiet splash"
+GRUB_CMDLINE_LINUX="acpi_backlight=vendor"
+##  原来好像是GRUB_CMDLINE_LINUX=""
 </code></pre>
 
-<p>在里面找到下面语句</p>
+<p>注意，如果是13.04版本，第二行改成</p>
 
-<pre><code>enabled=1
+<pre><code>GRUB_CMDLINE_LINUX="acpi_osi=Linux"
 </code></pre>
 
-<p>修改成</p>
+<p>然后升级一下GRUB</p>
 
-<pre><code>enabled=0
+<pre><code>sudo update-grub
 </code></pre>
 
-<p>重启一下Ubuntu试一试。</p>
+<p>这样就可以了。</p>
 
-<p>当然这种方法还是属于治标不治本的，最好的方法当然可以把它所提示的错误解决掉。</p>
+<p>如果还想开机就调节屏幕的亮度的话，还是需要在rc.local中调节</p>
+
+<pre><code>sudo gedit /etc/rc.local
+</code></pre>
+
+<p>打开rc.local之后，在后面加上</p>
+
+<pre><code>echo 500 &gt; /sys/class/backlight/intel_backlight/brightness
+</code></pre>
+
+<p>注意，如果有exit 0的话上面这一句要加再exit 0前面。</p>
+
+<p>然后重启Ubuntu看看效果。</p>
+
 
   </article>
   
   <nav class="pagination fn-clear" id="violet-paging">
     <div class="pagination-list">
       
-      <a class="prev" href="/ubuntu/2014/08/31/Use-Fn.html" rel="bookmark"><i class="fa fa-chevron-circle-left"></i> 上一篇： 使用Fn调节Ubuntu屏幕亮度</a>
+      <a class="prev" href="/blog/2014/08/28/Build-Wifi-For-Andoid.html" rel="bookmark"><i class="fa fa-chevron-circle-left"></i> 上一篇： Ubuntu开Wifi给Android手机用</a>
       
       <br />
       
-      <a class="next" href="/phone/2014/09/03/Whether-Meizu.html" rel="bookmark"><i class="fa fa-chevron-circle-right"></i> 下一篇： 魅族MX4到底值不值？</a>
+      <a class="next" href="/blog/2014/08/31/Enable-Problem.html" rel="bookmark"><i class="fa fa-chevron-circle-right"></i> 下一篇： 禁用“检测到系统程序出现问题”弹窗</a>
       
     </div>
   </nav>
   
   <!-- 多说评论框 start -->
-	  <div class="ds-thread" data-thread-key="4" data-title="禁用“检测到系统程序出现问题”弹窗" data-url="/ubuntu/2014/08/31/Enable-Problem.html"></div>
+	  <div class="ds-thread" data-thread-key="5" data-title="使用Fn调节Ubuntu屏幕亮度" data-url="/blog/2014/08/31/Use-Fn.html"></div>
   <!-- 多说评论框 end -->
   
 </div>
@@ -133,8 +147,7 @@
     </section>
     <footer class="site-footer" id="footerout">
   <div class="wrapper">
-  <center><a href="https://github.com/japhon">Japhon</a> &copy; 2014 &bull; All rights reserved.</center>
-  <center>Hosted by <a href="https://github.com">GitHub</a> and powered by <a href="http://jekyllrb.com">Jekyll</a>.</center>
+  <center><a href="https://github.com/japhon">Japhon</a> &copy; 2014 &bull; All rights reserved. Hosted by <a href="https://github.com">GitHub</a> and powered by <a href="http://jekyllrb.com">Jekyll</a>.</center>
   </div>
 </footer>
 

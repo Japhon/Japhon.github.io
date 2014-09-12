@@ -6,11 +6,11 @@
     <meta name="viewport" content="width=device-width">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-    <title>使用Fn调节Ubuntu屏幕亮度</title>
+    <title>Windows可以上网但Ubuntu上不了</title>
     <meta name="description" content="">
     
     <link rel="stylesheet" href="/css/main.css">
-    <link rel="canonical" href="http://japhon.github.io/ubuntu/2014/08/31/Use-Fn.html">
+    <link rel="canonical" href="http://japhon.github.io/blog/2014/08/27/Reset-Network.html">
     <link rel="stylesheet" href="/media/css/header.css" type="text/css">
     <link rel="stylesheet" href="/media/css/footer.css" type="text/css">
     <link rel="stylesheet" href="/media/css/style.css" type="text/css">
@@ -77,67 +77,41 @@
 
   <header class="post-header">
     <center>
-      <h1 class="post-title">使用Fn调节Ubuntu屏幕亮度</h1>
-      <p class="post-meta" id="date-more">Aug 31, 2014</p>
+      <h1 class="post-title">Windows可以上网但Ubuntu上不了</h1>
+      <p class="post-meta" id="date-more">Aug 27, 2014</p>
     </center>
   </header>
 
   <article class="post-content">
-    <p>重装了Ubuntu之后发现是调节不了屏幕亮度的，使用Fn快捷键的时候，上面的亮度条会改变，但是屏幕亮度依然没有改变。使用命令行的调节命令也没有作用。</p>
+    <p>同样一根网线，没有插拔，在win7下面可以正常使用，但是在Ubuntu下面就没法使用了（灯都不亮）。</p>
 
-<p>怎么样才能和Windows一样使用Fn快捷键也可以直接调节亮度呢？</p>
+<p>首先排除连接的问题，因为win7下面是可以正常上网的。所以不妨尝试一下重设端口。</p>
 
-<p>首先修改GRUB（12.04与14.04亲试可用）</p>
-
-<pre><code>sudo gedit /etc/default/grub
-GRUB_CMDLINE_LINUX_DEFAULT="quiet splash"
-GRUB_CMDLINE_LINUX="acpi_backlight=vendor"
-##  原来好像是GRUB_CMDLINE_LINUX=""
+<pre><code>sudo ifconfig eth0 down
+sudo ifconfig eth0 up
+sudo mii-tool -F 10baseT-HD eth0
 </code></pre>
 
-<p>注意，如果是13.04版本，第二行改成</p>
+<p>正常情况下在执行第一句后灯会亮起，执行第二句后灯会熄灭，执行第三句后会重新亮起，然后就可以正常使用了。</p>
 
-<pre><code>GRUB_CMDLINE_LINUX="acpi_osi=Linux"
-</code></pre>
-
-<p>然后升级一下GRUB</p>
-
-<pre><code>sudo update-grub
-</code></pre>
-
-<p>这样就可以了。</p>
-
-<p>如果还想开机就调节屏幕的亮度的话，还是需要在rc.local中调节</p>
-
-<pre><code>sudo gedit /etc/rc.local
-</code></pre>
-
-<p>打开rc.local之后，在后面加上</p>
-
-<pre><code>echo 500 &gt; /sys/class/backlight/intel_backlight/brightness
-</code></pre>
-
-<p>注意，如果有exit 0的话上面这一句要加再exit 0前面。</p>
-
-<p>然后重启Ubuntu看看效果。</p>
-
+<p>但是这种方法每一次重启都需要重新打这三行，如果觉得麻烦可以把它写入开机脚本，这里不详述。</p>
 
   </article>
   
   <nav class="pagination fn-clear" id="violet-paging">
     <div class="pagination-list">
       
-      <a class="prev" href="/ubuntu/2014/08/28/Build-Wifi-For-Andoid.html" rel="bookmark"><i class="fa fa-chevron-circle-left"></i> 上一篇： Ubuntu开Wifi给Android手机用</a>
+      <a class="prev" href="/life/2014/06/04/Badminton-provincial-match.html" rel="bookmark"><i class="fa fa-chevron-circle-left"></i> 上一篇： 羽毛球省赛总结</a>
       
       <br />
       
-      <a class="next" href="/ubuntu/2014/08/31/Enable-Problem.html" rel="bookmark"><i class="fa fa-chevron-circle-right"></i> 下一篇： 禁用“检测到系统程序出现问题”弹窗</a>
+      <a class="next" href="/blog/2014/08/28/Build-Wifi-For-Andoid.html" rel="bookmark"><i class="fa fa-chevron-circle-right"></i> 下一篇： Ubuntu开Wifi给Android手机用</a>
       
     </div>
   </nav>
   
   <!-- 多说评论框 start -->
-	  <div class="ds-thread" data-thread-key="5" data-title="使用Fn调节Ubuntu屏幕亮度" data-url="/ubuntu/2014/08/31/Use-Fn.html"></div>
+	  <div class="ds-thread" data-thread-key="2" data-title="Windows可以上网但Ubuntu上不了" data-url="/blog/2014/08/27/Reset-Network.html"></div>
   <!-- 多说评论框 end -->
   
 </div>
@@ -147,8 +121,7 @@ GRUB_CMDLINE_LINUX="acpi_backlight=vendor"
     </section>
     <footer class="site-footer" id="footerout">
   <div class="wrapper">
-  <center><a href="https://github.com/japhon">Japhon</a> &copy; 2014 &bull; All rights reserved.</center>
-  <center>Hosted by <a href="https://github.com">GitHub</a> and powered by <a href="http://jekyllrb.com">Jekyll</a>.</center>
+  <center><a href="https://github.com/japhon">Japhon</a> &copy; 2014 &bull; All rights reserved. Hosted by <a href="https://github.com">GitHub</a> and powered by <a href="http://jekyllrb.com">Jekyll</a>.</center>
   </div>
 </footer>
 

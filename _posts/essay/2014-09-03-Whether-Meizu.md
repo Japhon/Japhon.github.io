@@ -2,7 +2,7 @@
 layout: post
 title: 魅族MX4到底值不值？
 date:   2014-09-03 12:14:30
-categories: Phone
+categories: essay
 dsid: 0006
 abstract: MX4值不值得买？我的观点是，值！但是不建议买。以后的MX4在魅族里面的地位应该就相当于iphone5在苹果中的地位了，上有MX4 pro，下有mx3的经典。现在入手MX4，确实不是明智之选。
 ---

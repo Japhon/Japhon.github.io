@@ -1,7 +1,11 @@
 #footerout {
   background: #212121;
+  background-image: url(/photo/bg.jpg);
   color: #999;
 }
 #footerout a:hover {
   color: #fff;
+}
+#footerout div {
+  padding: 0;
 }
