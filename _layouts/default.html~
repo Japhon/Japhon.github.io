@@ -19,6 +19,6 @@
       <i class="fa fa-chevron-up"></i>
     </a>
     
-    {% include comment.html %}
+    {% include script.html %}
   </body>
 </html>

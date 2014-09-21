@@ -1,6 +1,8 @@
+<script type="text/javascript" src="/media/js/jquery-2.1.1.js"></script>
+
 <!-- 多说公共JS代码 start  -->
 <script type="text/javascript">
-var duoshuoQuery = {short_name:"japhon"};
+var duoshuoQuery = {short_name:"{{ site.duoshuo }}"};
 	(function() {
 		var ds = document.createElement('script');
 		ds.type = 'text/javascript';ds.async = true;
@@ -11,3 +13,14 @@ var duoshuoQuery = {short_name:"japhon"};
 	})();
 	</script>
 <!-- 多说公共JS代码 end -->
+
+<!-- 滚动屏幕 -->
+<script type="text/javascript"> 
+$(document).ready(function() { 
+  $('a.toTop').click(function() { 
+    $('html, body').animate({scrollTop:0}, 'slow'); 
+    return false; 
+  }); 
+}) 
+</script> 
+<!-- 滚动屏幕 end -->
