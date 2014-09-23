@@ -2,8 +2,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
-    <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
+    <title>{% if page.title %}{{ page.title }} &#8211; {% endif %}{{ site.title }}</title>
     <meta name="description" content="{{ site.description }}">
     
     <link rel="stylesheet" href="{{ "/css/main.css" | prepend: site.baseurl }}">
@@ -11,6 +10,5 @@
     <link rel="stylesheet" href="/media/css/header.css" type="text/css">
     <link rel="stylesheet" href="/media/css/footer.css" type="text/css">
     <link rel="stylesheet" href="/media/css/style.css" type="text/css">
-    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Spirax" type="text/css">
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/media/css/font-awesome.min.css">
 </head>

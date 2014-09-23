@@ -17,10 +17,18 @@
   padding: 30px 10px 10px 10px;
 }
 
+/*标题用的字体自定义*/
+@font-face {
+  font-family: 'OctemberScript';
+  src: url('../font/OctemberScript.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
 #blogtitle {
   font-size: 54px;
   font-weight: 700;
-  font-family: 'Spirax', cursive;
+  font-family: 'OctemberScript', cursive;
   text-shadow: #111 0px 0px 10px;
 }
 

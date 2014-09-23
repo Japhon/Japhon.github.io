@@ -1,11 +1,11 @@
 <header class="site-header" id="headerout">
 
   <div class="wrapper" id="headerin">    
-    <a class="site-title" href="{{ site.baseurl }}/">{{ site.title }}</a>
     <h1 id="blogtitle">
-      <center><a href="/home_page"> Japhon's Blog </a></center>
+      <center><a href="/home_page"> Japhon's Blog</a></center>
     </h1>
-    <center><h4> 记 录 生 活 点 滴 ， 简 简 单 单 就 好 ~ </h4></center>
+    <br />
+    <center><h4> 记录生活点滴，简简单单，开开心心就好~</h4></center>
   </div>
 
   <nav class="site-nav" id="navconf">

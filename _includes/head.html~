@@ -11,7 +11,5 @@
     <link rel="stylesheet" href="/media/css/header.css" type="text/css">
     <link rel="stylesheet" href="/media/css/footer.css" type="text/css">
     <link rel="stylesheet" href="/media/css/style.css" type="text/css">
-    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Spirax" type="text/css">
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
-    <script type="text/javascript" src="/media/js/jquery-2.1.1.js"></script>
+    <link rel="stylesheet" href="/media/css/font-awesome.min.css">
 </head>
