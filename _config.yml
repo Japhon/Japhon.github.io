@@ -1,10 +1,8 @@
 # Build settings
 markdown: kramdown
-
-#markdown: rdiscount
-#permalink: /blog/:year/:month/:day/:title.html
 url: http://japhon.github.io
 author: japhon
+author_zh: 庄泽帆
 email: sysu.zhuang@gmail.com
 duoshuo: japhon
 github: japhon

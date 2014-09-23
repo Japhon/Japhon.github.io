@@ -4,11 +4,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>{% if page.title %}{{ page.title }} &#8211; {% endif %}{{ site.title }}</title>
     <meta name="description" content="{{ site.description }}">
+    <meta name="name" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}" />
+		<meta name="author" content="{{ site.author }}" />
+		<meta name="author_zh" content="{{ site.author_zh }}" />
     
     <link rel="stylesheet" href="{{ "/css/main.css" | prepend: site.baseurl }}">
     <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
     <link rel="stylesheet" href="/media/css/header.css" type="text/css">
     <link rel="stylesheet" href="/media/css/footer.css" type="text/css">
     <link rel="stylesheet" href="/media/css/style.css" type="text/css">
-    <link rel="stylesheet" href="/media/css/font-awesome.min.css">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
 </head>

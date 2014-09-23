@@ -5,10 +5,10 @@
       <center><a href="/home_page"> Japhon's Blog</a></center>
     </h1>
     <br />
-    <center><h4> 记录生活点滴，简简单单，开开心心就好~</h4></center>
   </div>
 
   <nav class="site-nav" id="navconf">
+
     <div class="trigger">
       <li class="page-link">
         <a  href="/"> 封面 </a>
