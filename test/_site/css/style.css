@@ -73,7 +73,8 @@ a:hover {
 }
 .b-content {
   font-size: 2.4em;
-  position: relative
+  position: relative;
+  /*min-height: 36rem;*/
 }
 .fr_paragraph_center {
   font-family: Didact Gothic;
@@ -181,6 +182,7 @@ a:hover {
   margin-top: 64px;
 }
 .fr_c05_paragraph_text {
+  min-height: 2.31rem;
   float: none;
   display: block;
   width: 90%;
@@ -190,6 +192,7 @@ a:hover {
   max-width: 500px
 }
 .fr_c05_h1 {
+  min-height: 4.21rem;
   float: none;
   display: block;
   width: 90%;
@@ -278,7 +281,7 @@ a:hover {
     font-size: 2.5em
   }
   .fr_content_05 {
-    min-height: 27rem
+    min-height: 36rem
   }
   .fr_c05_3_column_grid {
     width: 92.01%;
@@ -313,6 +316,12 @@ a:hover {
   .fr_c05_paragraph_text {
     width: 90%;
     min-height: 4.88rem
+  }
+}
+
+@media screen and (max-height: 620px) {
+  .b-content {
+    min-height: 36rem;
   }
 }
 
