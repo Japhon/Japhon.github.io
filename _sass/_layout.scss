@@ -2,12 +2,22 @@
  * Site header
  */
 .site-header {
-    border-top: 5px solid $grey-color-dark;
     border-bottom: 1px solid $grey-color-light;
     min-height: 56px;
+    padding-top: 30px;
+    padding-bottom: 40px;
+
+    @include media-query($on-palm) {
+        padding-top: 10px;
+        padding-bottom: 20px;
+    }
 
     // Positioning context for the mobile navigation icon
     position: relative;
+
+    //  user update
+    shadow: #999 0px 0px 5px;
+    background-color: $background-dark;
 }
 
 .site-title {
@@ -22,6 +32,75 @@
         color: $grey-color-dark;
     }
 }
+
+.site-nav {
+    float: right;
+    line-height: 56px;
+
+    //  user update
+    margin-top: 20px;
+
+    .menu-icon {
+        display: none;
+    }
+
+    .page-link {
+        color: $text-light;
+        line-height: $base-line-height;
+        margin-right: 10px;
+
+        // Gaps between nav items, but not on the first one
+        &:not(:first-child) {
+            margin-left: 10px;
+        }
+    }
+
+    @include media-query($on-palm) {
+        position: absolute;
+        top: 9px;
+        right: 30px;
+        background-color: $background-color;
+        border: 1px solid $grey-color-light;
+        border-radius: 5px;
+        text-align: right;
+
+        .menu-icon {
+            display: block;
+            float: right;
+            width: 36px;
+            height: 26px;
+            line-height: 0;
+            padding-top: 10px;
+            text-align: center;
+
+            > svg {
+                width: 18px;
+                height: 15px;
+
+                path {
+                    fill: $grey-color-dark;
+                }
+            }
+        }
+
+        .trigger {
+            clear: both;
+            display: none;
+        }
+
+        &:hover .trigger {
+            display: block;
+            padding-bottom: 5px;
+        }
+
+        .page-link {
+            display: block;
+            padding: 5px 10px;
+            color: $text-color;
+        }
+    }
+}
+
 
 
 /**
@@ -84,6 +163,16 @@
     }
 }
 
+@include media-query($on-palm) {
+    .footer-col {
+        float: none;
+        width: -webkit-calc(100% - (#{$spacing-unit} / 2));
+        width:         calc(100% - (#{$spacing-unit} / 2));
+    }
+}
+
+
+
 /**
  * Page content
  */
@@ -92,7 +181,7 @@
 }
 
 .page-heading {
-    font-size: 32px;
+    font-size: 20px;
 }
 
 .post-list {
@@ -111,7 +200,18 @@
 
 .post-link {
     display: block;
-    font-size: 36px;
+    font-size: 24px;
+
+    //  user update
+    color: $grey-color-dark;
+
+    //  user update
+    &:visited {
+        color: $grey-color-dark;
+    }
+    &:hover {
+        color: $grey-color;
+    }
 }
 
 
@@ -124,12 +224,12 @@
 }
 
 .post-title {
-    font-size: 34px;
+    font-size: 42px;
     letter-spacing: -1px;
     line-height: 1;
 
     @include media-query($on-laptop) {
-        font-size: 32px;
+        font-size: 36px;
     }
 }
 
@@ -137,10 +237,10 @@
     margin-bottom: $spacing-unit;
 
     h2 {
-        font-size: 30px;
+        font-size: 32px;
 
         @include media-query($on-laptop) {
-            font-size: 26px;
+            font-size: 28px;
         }
     }
 
@@ -148,15 +248,15 @@
         font-size: 26px;
 
         @include media-query($on-laptop) {
-            font-size: 23px;
+            font-size: 22px;
         }
     }
 
     h4 {
-        font-size: 22px;
+        font-size: 20px;
 
         @include media-query($on-laptop) {
-            font-size: 20px;
+            font-size: 18px;
         }
     }
 }

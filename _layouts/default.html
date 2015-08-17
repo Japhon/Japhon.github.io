@@ -6,19 +6,21 @@
   <body>
 
     {% include header.html %}
-    <section class="main" id="mainouter">
-      <div class="page-content" id="maincontainer">
-        <div class="wrapper">
-          {{ content }}
-        </div>
+
+    <div class="page-content">
+      <div class="wrapper">
+        {{ content }}
       </div>
-    </section>
+    </div>
+
     {% include footer.html %}
-    
+
     <a href="#" class="toTop">
       <i class="fa fa-chevron-up"></i>
     </a>
-    
+
     {% include script.html %}
+
   </body>
+
 </html>

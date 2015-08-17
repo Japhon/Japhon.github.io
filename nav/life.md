@@ -1,25 +1,23 @@
 ---
-layout: default
+layout: page
 title: 生活
+permalink: /life/
 ---
 
-<div class="home cc">
-  <div class="introhead">
-    <h1 class="page-heading"></h1>
-    <img class="intro" src="/photo/portrait.jpg" width="85" height="85" />
-    <p class="intro"><i>Japhon是一个热爱生活的人。生活中总会有很多有趣的事情。开心其实很简单，有时候可能是因为一餐饭，有时候可能是因为一首歌，有时候可能是因为一个眼神，有时候可能是因为旅行途中的一点小感动。生活就是要这样，平平凡凡，在简简单单中寻找快乐。你觉得呢？</i></p>
-  </div>
-  <hr />
-  {% for post in site.categories.life %}
-    <a href="{{ post.url | prepend: site.baseurl }}">
+<div class="home">
+
+  <ul class="post-list">
+    {% for post in site.categories.life %}
       <li>
+        <span class="post-meta">{{ post.date | date: "%Y-%-m-%-d" }}</span>
+
         <h2>
-          <center><div class="post-link"> {{ post.title }} </div></center>
-          <center><span class="post-meta"> {{ post.date | date: "%b %-d, %Y" }} </span></center>
+            <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
         </h2>
-        <span class="post-meta"> [摘要] </span><span> {{ post.abstract }} </span><span class="post-meta"> [查看全文] </span>
       </li>
-    </a>
-    <hr />
-  {% endfor %}
+    {% endfor %}
+  </ul>
+
+  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
+
 </div>
