@@ -1,4 +1,4 @@
-/*到顶部样式*/
+/*to top*/
 a.toTop {
   width: 40px;
   height: 40px;
@@ -23,7 +23,7 @@ a.toTop:hover {
   vertical-align: top;
 }
 
-/*标题自定义样式*/
+/*site title*/
 @font-face {
   font-family: 'OctemberScript';
   src: url('../font/OctemberScript.ttf');
@@ -43,7 +43,7 @@ body {
   text-shadow: #999 0px 0px 1px;
 }
 
-/*标题样式*/
+/*post title*/
 .post-list {
   text-align: center;
 }
