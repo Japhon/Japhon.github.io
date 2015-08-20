@@ -1,4 +1,4 @@
-/*to top*/
+/* to top */
 a.toTop {
   width: 40px;
   height: 40px;
@@ -37,13 +37,13 @@ a.toTop:hover {
   font-family: 'OctemberScript', cursive;
 }
 body h1 {
-  text-shadow: #999 0px 0px 5px;
+  text-shadow: 0px 0px 5px #999999;
 }
 body {
-  text-shadow: #999 0px 0px 1px;
+  text-shadow: 0px 0px 1px rgba(0, 0, 0, .4);
 }
 
-/*post title*/
+/* post title */
 .post-list {
   text-align: center;
 }
@@ -58,4 +58,12 @@ body {
 }
 .post-header {
   text-align: center;
+}
+
+/* page link */
+.page-link {
+  font-size: $mbig-font-size;
+  @include media-query($on-palm) {
+    font-size: $big-font-size;
+  }
 }

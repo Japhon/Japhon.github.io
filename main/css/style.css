@@ -181,7 +181,7 @@ a:hover {
   min-height: 200px
 }
 .my-icon {
-  /*  调整图标居中  */
+  /*  暴力调整图标居中  */
   margin-top: 64px;
 }
 .fr_c05_paragraph_text {
@@ -337,7 +337,7 @@ a:hover {
 }
 .fr_c05_image_1:hover, .fr_c05_image_2:hover, .fr_c05_image_3:hover, .fr_c05_image_4:hover {
   color: #ffffff;
-  transition-duration: .125s
+  transition-duration: .3s
 }
 
 .fr-widget-hover-scale-up {
@@ -348,8 +348,8 @@ a:hover {
   -webkit-transform: scale(1.1);
   -ms-transform: scale(1.1);
   transform: scale(1.1);
-  -webkit-transition-duration: 0.15s;
-  transition-duration: 0.15s;
+  -webkit-transition-duration: 0.25s;
+  transition-duration: 0.25s;
 }
 #card a:hover i{opacity: 0; font-size: 130%;}
 #card a:hover span{display: block; top: 60%; opacity: 1;}
