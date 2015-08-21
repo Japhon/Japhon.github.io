@@ -62,7 +62,7 @@
         }
         */
     }
-    
+
     @include media-query($on-palm) {
         display: none;
     }
@@ -83,6 +83,9 @@
         display: block;
         margin: 0;
     }
+}
+#menu-btn {
+    font-size: 32px;
 }
 .mobile-nav {
     min-height: 50px;
