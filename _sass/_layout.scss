@@ -34,11 +34,6 @@
     &:visited {
         color: $grey-color-dark;
     }
-
-    @include media-query($on-small-screen) {
-        float: none;
-        text-align: center;
-    }
 }
 
 .site-nav {
@@ -67,7 +62,7 @@
         }
         */
     }
-
+    
     @include media-query($on-palm) {
         display: none;
     }
@@ -88,12 +83,9 @@
         display: block;
         margin: 0;
     }
-    @include media-query($on-small-screen) {
-        float: none;
-        margin: auto;
-    }
 }
 .mobile-nav {
+    min-height: 50px;
     display: none;
     @include media-query($on-palm) {
         display: block;
@@ -105,20 +97,33 @@
 }
 .mobile-nav a {
     text-align: center;
-    font-size: $mbig-font-size;
 
     color: $text-light;
     &:hover {
         color: $grey-color;
+    }    
+}
+.mobile-nav li { 
+    list-style-type: none;
+
+    &:hover {
+        background-color: rgba(0, 0, 0, .125);
     }
 
-    > li { 
-        list-style-type: none;
-        &:hover {
-            background-color: rgba(0, 0, 0, .125);
-        }
+    @include media-query($on-palm) {
+        float: left;
+        font-size: $mbig-font-size;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        padding-left: 20px;
+        padding-right: 20px;
     }
-    
+
+    @include media-query($on-small-screen) {
+        font-size: $lbig-font-size;
+        padding: 5px;
+        float: none;
+    }
 }
 .cut-off {
     margin-top:     5px;
