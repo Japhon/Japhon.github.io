@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>计算机图形学-第一周周报</title>
+  <meta name="description" content="题目">
+
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="http://japhon.github.io/blog/2015/07/20/week1-11.html">
+  <link rel="alternate" type="application/rss+xml" title="Japhon" href="http://japhon.github.io/feed.xml" />
+
+  <!-- user add -->
+  <!-- for icon -->
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+</head>
+
+
+  <body>
+
+    <header class="site-header">
+
+  <div class="wrapper">
+    
+    <a class="site-title" href="/">
+      <h1 class="my-site-title">
+        Japhon
+      </h1>
+    </a>
+
+    <div class="menu-icon">
+      <a href="#" id="menu-btn">
+        <svg viewBox="0 0 18 15">
+          <path fill="#eee" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#eee" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#eee" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </a>
+    </div>
+
+    <nav class="site-nav">
+      <div class="trigger">
+        
+          
+          <a class="page-link" href="/blog/">博客</a>
+          
+        
+          
+          <a class="page-link" href="/essay/">杂文</a>
+          
+        
+          
+        
+          
+          <a class="page-link" href="/life/">生活</a>
+          
+        
+          
+        
+          
+          <a class="page-link" href="/about/">作者</a>
+          
+        
+      </div>
+    </nav>
+
+  </div>
+
+  <!-- user update -->
+  <div id="toggle-nav">
+    <nav class="mobile-nav">
+      <ul class="mobile-nav-list">
+        <hr class="cut-off" />
+        
+                      
+            <a class="mobile-page-link" href="/blog/">
+              <li class="mobile-nav-item">博客</li>
+            </a>            
+          
+        
+                      
+            <a class="mobile-page-link" href="/essay/">
+              <li class="mobile-nav-item">杂文</li>
+            </a>            
+          
+        
+          
+        
+                      
+            <a class="mobile-page-link" href="/life/">
+              <li class="mobile-nav-item">生活</li>
+            </a>            
+          
+        
+          
+        
+                      
+            <a class="mobile-page-link" href="/about/">
+              <li class="mobile-nav-item">作者</li>
+            </a>            
+          
+        
+      </ul>
+    </nav>
+
+  </div>
+
+</header>
+
+
+    <div class="page-content">
+      <div class="wrapper">
+        <div class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">计算机图形学-第一周周报</h1>
+    <p class="post-meta">Jul 20, 2015</p>
+  </header>
+
+  <article class="post-content">
+    <h3 id="section">题目</h3>
+
+<p>3D Scanning Deformable Objects with a Single RGBD Sensor</p>
+
+<h3 id="section-1">概述</h3>
+
+<p>使用单一的RGBD传感器(Kinect)，允许扫描过程中有大量的非刚性形变，并且在没有严重约束到用户和相机的前提下，达到高质量的扫描结果。</p>
+
+<h4 id="section-2">解读：</h4>
+
+<p><strong>单一</strong>：之前的部分解决的方式是采用多个Kinect来实现的，而本论文的方法是建立在单一传感器的基础上的改进。</p>
+
+<p><strong>大量</strong>：之前的方式大多建立在一个或若干个非刚性形变，而本论文提到的方法是允许扫描过程中的非刚性形变是“大量”的。</p>
+
+<p><strong>没有严重约束</strong>：一些系统需要用户在Kinect前面保持比较僵硬的姿势先扫描，这对于一些孩子或者小动物可能无法实现，而本论文提到的方法不会对用户有太多的约束。</p>
+
+<p><strong>高质量</strong>：本论文使用了束调整（bundle adjustment）来得到改进的数据对齐（data alignment），从而达到模型高质量的目的。</p>
+
+<h3 id="section-3">论文内容</h3>
+
+<h4 id="section-4">曲面变形模型（第2章，第3章）</h4>
+
+<p>这个部分主要介绍了三角网格曲面模型和嵌入式变形模型。</p>
+
+<p>本文介绍的方法就是建立在用三角网格曲面模型表示的，所以需要对三角网格进行参数化，下表标记，并使用线性组合来估计位置的坐标。</p>
+
+<p>本来的方法是允许曲面进行形变的，所以通过嵌入式形变模型来解决。在模型中，一组K个“ED节点”在网中均匀取样，每个顶点都由一组固定的权重控制它的变形，就是由离它最近的c个节点决定，在论文中c取值为4，并且允许整个网格产生形变网络。并通过遵循的标准实践构建的变形增加E(G)，来防止变形产生在不合理的地方，具体实现通过，引入刚度（rigidity），让它在发生形变的ED节点处增加，然后使用非线性最小二乘优化。</p>
+
+<h4 id="bundle-adjustment456">束调整（bundle adjustment）的程序预处理（第4，5，6章）</h4>
+
+<p>这个部分主要介绍了包括部分扫描提取，粗扫描比对，错误分配。</p>
+
+<p>部分扫描提取：首先将RGBD序列预处理为一组高质量的组合（set），并且只是部分扫描，减少拟合曲面模型的计算复杂度，然后继续通过变形段划分为参考形态，融合成一个完整的网的结果，使用形变去提供一个很好的初始估计的变形参数。</p>
+
+<p>粗扫描对比：首先通过邻接段快速地产生一组参数，然后通过这组参数快速地找到当前段的首帧（frame）和尾帧，并且使用ED对齐算法来进行估计。</p>
+
+<p>错误分配：在参数传播的过程中，随着i的增加，会使结果越来越不可靠，所以直接对准Vj，Vi使用一组参数进行匹配对齐扫描，对结果进行精炼。</p>
+
+<h4 id="bundle-adjustment7">束调整（bundle adjustment）（第7章）</h4>
+
+<p>这部分主要就是讲了这个全文最重要的方法，束调整，用来改善数据校准和恢复细节。</p>
+
+<p>变形条件：使用段的数据点，使用ED图对它进行形变，因此增加了相近变形面的距离的能量，提供给法向量去对应。</p>
+
+<p>表面正则化条件：使用拉普拉斯调整。这样有可能缩小通过拖拽的内边界顶点集表面，所以我们添加一个能量条件来激励等距（isometry）。</p>
+
+<p>解决：通过上面的计算，得出的结果代入下面式子</p>
+
+<p><img src="/photo/week1/pic1.jpg" alt="week1-1" /></p>
+
+<p>我们可以找出最小值，然后使用Levenberg–Marquardt 算法去最小化E（V）的导数。这样使表面光滑并且改善了对齐。</p>
+
+<h3 id="section-5">存在的问题</h3>
+
+<p>1.如果粗尺度重建失败，就不能进行比较理想的变化。</p>
+
+<p>2.计算成本比较高</p>
+
+<h3 id="section-6">心得</h3>
+
+<p>之前就比较喜欢这种基于Kinect开发的东西，所以挑了这篇来看。可能是比较少看这种科技论文，虽然前前后后啃了有一个星期，包括查了一些相关的其他人的博客，但是这篇的实现的部分基本还是看不太懂，可能自己还不太适应英文论文这种形式，而且可能自己需要多看一些比较靠近基础的论文，才能理解它里面比较多的引用。</p>
+
+
+  </article>
+
+  <nav class="pagination fn-clear" id="violet-paging">
+    <div class="pagination-list">
+      
+      <a class="prev" href="/life/2014/11/17/Travel-to-Macau-10.html" rel="bookmark"><i class="fa fa-chevron-circle-left"></i> 上一篇： 澳门游</a>
+      
+      <br />
+      
+      <a class="next" href="/2015/07/26/week2-12.html" rel="bookmark"><i class="fa fa-chevron-circle-right"></i> 下一篇： Week2 12</a>
+      
+    </div>
+  </nav>
+  
+  <!-- 多说评论框 start -->
+	  <div class="ds-thread" data-thread-key="9" data-title="计算机图形学-第一周周报" data-url="/blog/2015/07/20/week1-11.html"></div>
+  <!-- 多说评论框 end -->
+
+</div>
+
+      </div>
+    </div>
+
+    <footer class="site-footer">
+  <div class="wrapper">
+    <center><a href="https://github.com/japhon">Japhon</a> &copy; 2014 - 2015 &bull; All rights reserved. <span class="footer-new-line"></span>Hosted by <a href="https://github.com">GitHub</a> and powered by <a href="http://jekyllrb.com">Jekyll</a>.</center>
+  </div>
+</footer>
+
+    <a href="#" class="toTop">
+      <i class="fa fa-chevron-up"></i>
+    </a>
+
+    <script type="text/javascript" src="/js/jquery-2.1.1.js"></script>
+
+<!-- 多说公共JS代码 start  -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"japhon"};
+(function() {
+	var ds = document.createElement('script');
+	ds.type = 'text/javascript';ds.async = true;
+	ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+	ds.charset = 'UTF-8';
+	(document.getElementsByTagName('head')[0] 
+		|| document.getElementsByTagName('body')[0]).appendChild(ds);
+})();
+</script>
+<!-- 多说公共JS代码 end -->
+
+<!-- 滚动屏幕 -->
+<script type="text/javascript"> 
+$(document).ready(function() { 
+	$('a.toTop').click(function() { 
+		$('html, body').animate({scrollTop:0}, 'slow'); 
+		return false; 
+	}); 
+}) 
+</script> 
+<!-- 滚动屏幕 end -->
+
+<!-- 百度统计代码 -->
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F9c8c2388ce86bd311f66f91366baaa3e' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<!-- 百度统计代码 end -->
+
+<!-- 手机显示菜单 -->
+<script type="text/javascript">
+$(function() {
+	$('#toggle-nav').hide();
+	$('#menu-btn').click(function() {
+		$('#toggle-nav').slideToggle();
+	});
+});
+</script>
+<!-- 手机显示菜单 end -->
+
+
+  </body>
+
+</html>
