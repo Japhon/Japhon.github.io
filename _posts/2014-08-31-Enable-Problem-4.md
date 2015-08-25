@@ -4,6 +4,7 @@ title: 禁用“检测到系统程序出现问题”弹窗
 date:   2014-08-31 11:08:31
 categories: Blog
 dsid: 0004
+tags: ["Ubuntu"]
 abstract: 安装了Ubuntu之后，一般更新一下软件，重启一下Ubuntu都会出现类似于“检测到系统程序出现问题”的提示。所以想到把那个窗口给禁用掉。
 ---
 

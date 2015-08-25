@@ -1,13 +1,14 @@
 ---
 layout: page
-title: 生活
-permalink: /life/
+title: 杂文
+groups: nav
+permalink: /essay/
 ---
 
 <div class="home">
 
   <ul class="post-list">
-    {% for post in site.categories.life %}
+    {% for post in site.categories.essay %}
       <li>
         <h2>
             <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>

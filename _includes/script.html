@@ -21,6 +21,11 @@ $(document).ready(function() {
 		$('html, body').animate({scrollTop:0}, 'slow'); 
 		return false; 
 	}); 
+	$(function(){
+		$(".tags_home a").click(function(){
+			$("html,body").animate({ scrollTop:$($(this).attr("href")).offset().top + "px"}, 'slow');
+		});
+	});
 }) 
 </script> 
 <!-- 滚动屏幕 end -->

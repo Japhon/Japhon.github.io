@@ -1,6 +1,7 @@
 ---
 layout: page
 title: 作者
+groups: nav
 permalink: /about/
 ---
 
