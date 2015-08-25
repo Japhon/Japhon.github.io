@@ -77,3 +77,35 @@ pre {
     font-size: $big-font-size;
   }
 }
+
+/* tags */
+.tags_block {
+  float: left;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin: 5px;
+  color: $text-light;
+  background-color: rgba(0, 0, 0, .3); 
+  box-shadow: 2px 2px 2px #666666;
+
+  &:hover {
+    color: #fff;
+    background-color: rgba(0, 0, 0, .4); 
+  }
+}
+.clear-float {
+  clear: both;
+}
+.tags_post_list {
+  list-style: none;
+
+  > a {
+    color: $text-color;
+  }
+
+  > a:hover {
+    color: $grey-color;
+  }
+}
