@@ -6,24 +6,28 @@ permalink: /tags/
 ---
 
 <div class="home">
-  <div class="tags_home">
-  {% for tag in site.tags %}
-    <a class="tags_block_link" href="#{{ tag[0] }}">
-      <div class="tags_block"> {{ tag[0] }} <SUP> {{ tag[1].size }} </SUP></div>
-    </a> 
-  {% endfor %}
+  <div class="general_block">
+    <div class="tags_home">
+      {% for tag in site.tags %}
+        <a class="tags_block_link" href="#{{ tag[0] }}">
+          <div class="tags_block"> {{ tag[0] }} <SUP> {{ tag[1].size }} </SUP></div>
+        </a> 
+      {% endfor %}
+    </div>
+    <div class="clear-float"></div><!-- this one is the line for clear the left float-->
   </div>
-  <div class="clear-float"></div>
 
   {% for tag in site.tags %}
-    <h4 id="{{ tag[0] }}">{{ tag[0] }}</h4>
-    <ul>
-      {% for post in tag[1] %}
-        <li class="tags_post_list">
-          <a href="{{ post.url | prepend: site.baseurl }}"> {{ post.title }} - <span class="post-meta">{{ post.date | date: "%Y-%-m-%-d" }}</span></a>
-        </li>
-      {% endfor %}
-    </ul>
+    <div id="{{ tag[0] }}" class="general_block">
+      <h4>{{ tag[0] }}</h4>
+      <ul>
+        {% for post in tag[1] %}
+          <li class="tags_post_list">
+            <a href="{{ post.url | prepend: site.baseurl }}"> {{ post.title }} - <span class="post-meta">{{ post.date | date: "%Y-%-m-%-d" }}</span></a>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
   {% endfor %}
 
 <!-- test
