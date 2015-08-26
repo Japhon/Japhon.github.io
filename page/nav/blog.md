@@ -11,7 +11,7 @@ permalink: /blog/
     {% for post in site.categories.blog %}
       <div class="general_block">
         <li>
-          <h2>
+          <h2 class="my-post-title">
               <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
           </h2>
           <span class="post-meta">

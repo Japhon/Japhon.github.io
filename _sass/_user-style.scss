@@ -5,7 +5,20 @@
   box-shadow: 5px 5px 10px $box-shadow;
   padding: 20px;
   margin: 20px;
+
+  @include media-query($on-palm) {
+    margin: 20px 0;
+    padding: 20px 5px;
+  }
 }
+
+a {
+  color: $brand-color;
+  &:hover {
+    color: lighten($brand-color, 15%);
+  }
+}
+
 
 /* to top */
 a.toTop {
@@ -76,7 +89,7 @@ pre {
 .post-header {
   text-align: center;
 }
-.post-list h2, p {
+.my-post-title {
   margin-bottom: 0;
 }
 

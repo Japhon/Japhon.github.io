@@ -178,7 +178,7 @@ a:hover {
 }
 .fr_c05_image_1, .fr_c05_image_2, .fr_c05_image_3, .fr_c05_image_4 {
   text-align:center;
-  min-height: 200px
+  min-height: 200px;
 }
 .my-icon {
   /*  暴力调整图标居中  */
@@ -246,7 +246,7 @@ a:hover {
     max-width: inherit
   }
   .fr_c05_image_1, .fr_c05_image_2, .fr_c05_image_3, .fr_c05_image_4 {
-    min-height: 160px
+    min-height: 160px;
   }
   .my-icon {
   /*  调整图标居中  */
@@ -333,7 +333,7 @@ a:hover {
 .fr_c05_image_1, .fr_c05_image_2, .fr_c05_image_3, .fr_c05_image_4 {
   transition-property: color, background-color;
   transition-duration: .3s;
-  transition-timing-function: ease-out
+  transition-timing-function: ease-out;
 }
 .fr_c05_image_1:hover, .fr_c05_image_2:hover, .fr_c05_image_3:hover, .fr_c05_image_4:hover {
   color: #ffffff;

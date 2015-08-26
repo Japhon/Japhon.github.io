@@ -49,12 +49,23 @@
         line-height: $base-line-height;
         margin-left:  2px;
         margin-right: 2px;
-        padding: 10px;
-
+        padding: 10px 20px;
+        border-radius: 5px;
+        @include media-query($on-laptop) {
+            padding: 10px 10px;
+        }
         &:hover {
             color: #fff;
             background-color: rgba(0, 0, 0, .125);
+            box-shadow: 1px 1px 3px $box-shadow;
         }
+
+        -webkit-transition: all .5s ease;
+        -moz-transition: all .5s ease;
+        -o-transition: all .5s ease;
+        -ms-transition: all 1s ease;
+        transition: all .5s ease;
+        
         /*
         // Gaps between nav items, but not on the first one
         &:not(:first-child) {
@@ -88,7 +99,7 @@
     font-size: 32px;
 }
 .mobile-nav {
-    min-height: 50px;
+    min-height: 40px;
     display: none;
     @include media-query($on-palm) {
         display: block;
@@ -106,24 +117,28 @@
         color: #fff;
     }    
 }
-.mobile-nav li { 
+.mobile-nav li {
     list-style-type: none;
 
     &:hover {
         background-color: rgba(0, 0, 0, .125);
     }
 
+    -webkit-transition: all .5s ease;
+    -moz-transition: all .5s ease;
+    -o-transition: all .5s ease;
+    -ms-transition: all 1s ease;
+    transition: all .5s ease;
+
     @include media-query($on-palm) {
         float: left;
         font-size: $mbig-font-size;
-        padding-top: 10px;
-        padding-bottom: 10px;
-        padding-left: 20px;
-        padding-right: 20px;
+        padding: 5px 20px;
+        border-radius: 5px;
     }
 
     @include media-query($on-small-screen) {
-        font-size: $lbig-font-size;
+        font-size: $mbig-font-size;
         padding: 5px;
         float: none;
     }
@@ -197,6 +212,9 @@
     color: $grey-color-dark;
 
     @include media-query($on-laptop) {
+        font-size: 30px;
+    }
+    @include media-query($on-palm) {
         font-size: 24px;
     }
 
@@ -207,6 +225,12 @@
     &:hover {
         color: $grey-color;
     }
+
+    -webkit-transition: all .5s ease;
+    -moz-transition: all .5s ease;
+    -o-transition: all .5s ease;
+    -ms-transition: all 1s ease;
+    transition: all .5s ease;
 }
 
 
@@ -220,9 +244,8 @@
 
 .post-title {
     font-size: 42px;
-    letter-spacing: 5px;
+    letter-spacing: -1px;
     line-height: 1;
-    color: $grey-color;
 
     @include media-query($on-laptop) {
         font-size: 36px;

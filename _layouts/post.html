@@ -6,7 +6,16 @@ layout: default
   <header class="post-header">
     <h1 class="post-title">{{ page.title }}</h1>
     <p class="post-meta">
-      Post by {{ site.author }} at {{ page.date | date: '%Y-%m-%d' }} with tags {% for tag in page.tags %}<a href="{{ site.tags_path }}#{{ tag }}" rel="nofollow">{{ tag }}</a>{% if forloop.last %}{% else %}, {% endif %}{% endfor %}
+      Post by <a href="/about/">{{ site.author }}</a> 
+            at {{ page.date | date: '%Y-%m-%d' }} 
+            with tags 
+            {% for tag in page.tags %}
+              <a href="{{ site.tags_path }}#{{ tag }}" rel="nofollow">
+                {{ tag }}
+              </a>
+              {% if forloop.last %}
+              {% else %}, {% endif %}
+            {% endfor %}
     </p>
   </header>
 

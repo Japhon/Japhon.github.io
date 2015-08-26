@@ -11,11 +11,11 @@ permalink: /essay/
     {% for post in site.categories.essay %}
       <div class="general_block">
         <li>
-          <h2>
+          <h2 class="my-post-title">
               <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
           </h2>
           <span class="post-meta">
-            Post by {{ site.author }} 
+            Post by <a href="/about/">{{ site.author }}</a> 
             at {{ post.date | date: '%Y-%m-%d' }} 
             with tags 
             {% for tag in post.tags %}
