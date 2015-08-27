@@ -117,10 +117,8 @@ blockquote {
  */
 pre,
 code {
-    font-size: 15px;
-    border: 1px solid $grey-color-light;
-    border-radius: 3px;
-    background-color: #eef;
+    font-size: $base-font-size;
+    background-color: #eee;
 }
 
 code {
@@ -129,7 +127,8 @@ code {
 
 pre {
     padding: 8px 12px;
-    overflow-x: scroll;
+    overflow-x: auto;
+    box-shadow: 2px 2px 5px $box-shadow;
 
     > code {
         border: 0;
