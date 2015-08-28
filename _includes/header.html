@@ -2,7 +2,10 @@
 
   <div class="wrapper">
     
-    <a class="my-site-title page-link" href="{{ site.baseurl }}/"> 首页 </a>
+    <a class="my-site-title page-link" href="{{ site.baseurl }}/">
+      <i class="fa fa-th-large"></i>
+      {{ site.title }}
+    </a>
     
     <div class="menu-icon">
       <a href="#" id="menu-btn">
@@ -18,7 +21,18 @@
       <div class="trigger">
         {% for page in site.pages %}
           {% if page.title and page.groups == 'nav' %}
-          <a class="page-link" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
+          <a class="page-link" href="{{ page.url | prepend: site.baseurl }}">
+            {% if page.title == 'Blog' %}
+              <i class="fa fa-pencil-square-o"></i>
+            {% else if page.title == 'Essay' %}
+              <i class="fa fa-book"></i>
+            {% else if page.title == 'Life' %}
+              <i class="fa fa-coffee"></i>
+            {% else if page.title == 'About' %}
+              <i class="fa fa-user"></i>
+            {% endif %}
+            {{ page.title }}
+          </a>
           {% endif %}
         {% endfor %}
       </div>
@@ -33,14 +47,24 @@
         <hr class="cut-off" />
         {% for page in site.pages %}
           {% if page.title and page.groups == 'nav' %}
-            <a class="mobile-page-link" href="{{ page.url | prepend: site.baseurl }}">
-              <li class="mobile-nav-item">{{ page.title }}</li>
+            <a class="mobile-page-link page-link" href="{{ page.url | prepend: site.baseurl }}">
+              <li class="mobile-nav-item">
+                {% if page.title == 'Blog' %}
+                  <i class="fa fa-pencil-square-o"></i>
+                {% else if page.title == 'Essay' %}
+                  <i class="fa fa-book"></i>
+                {% else if page.title == 'Life' %}
+                  <i class="fa fa-coffee"></i>
+                {% else if page.title == 'About' %}
+                  <i class="fa fa-user"></i>
+                {% endif %}
+                {{ page.title }}
+              </li>
             </a>            
           {% endif %}
         {% endfor %}
       </ul>
     </nav>
-
   </div>
 
 </header>

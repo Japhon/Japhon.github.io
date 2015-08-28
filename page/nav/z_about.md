@@ -1,6 +1,6 @@
 ---
 layout: page
-title: 作者
+title: About
 groups: nav
 permalink: /about/
 ---

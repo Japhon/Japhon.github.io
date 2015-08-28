@@ -1,6 +1,6 @@
 ---
 layout: navpage
-title: 博客
+title: Blog
 groups: nav
 permalink: /blog/
 ---

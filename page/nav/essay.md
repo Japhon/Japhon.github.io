@@ -1,6 +1,6 @@
 ---
 layout: navpage
-title: 杂文
+title: Essay
 groups: nav
 permalink: /essay/
 ---

@@ -1,6 +1,6 @@
 ---
 layout: navpage
-title: 生活
+title: Life
 groups: nav
 permalink: /life/
 ---

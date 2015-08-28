@@ -100,8 +100,11 @@ a.toTop:hover {
 /* page link */
 .page-link {
   font-size: $lbig-font-size;
-  @include media-query($on-palm) {
+  @include media-query($on-laptop) {
     font-size: $mbig-font-size;
+  }
+  @include media-query($on-palm) {
+    font-size: $big-font-size;
   }
 }
 
