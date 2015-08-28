@@ -353,15 +353,21 @@ a:hover {
 }
 #card a:hover i{opacity: 0; font-size: 130%;}
 #card a:hover span{display: block; top: 60%; opacity: 1;}
-#card a span{position: relative; top: 80%; left: 0; width: 100%; height: 100%; opacity: 0; font-size: 140%;/*position: absolute;*/
+#card a span {position: relative; top: 80%; left: 0; width: 100%; height: 100%; opacity: 0; font-size: 140%;/*position: absolute;*/
   -webkit-transition: top ease .3s, opacity ease .3s;
   -moz-transition: top ease .3s, opacity ease .3s;
   -ms-transition: top ease .3s, opacity ease .3s;
   transition: top ease .3s, opacity ease .3s;
 }
-#card a i{display: inline-block; width: 100%; height: 100%; font-size: 300%;
+#card a i {display: inline-block; width: 100%; height: 100%; font-size: 300%;
   -webkit-transition: opacity ease .3s, font-size ease .3s, color ease .3s;
   -moz-transition: opacity ease .3s, font-size ease .3s, color ease .3s;
   -ms-transition: opacity ease .3s, font-size ease .3s, color ease .3s;
   transition: opacity ease .3s, font-size ease .3s, color ease .3s;
+}
+.japhoncard  {
+  -webkit-transition: all ease .5s;
+  -moz-transition: all ease .5s;
+  -ms-transition: all ease .5s;
+  transition: all ease .5s;
 }

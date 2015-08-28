@@ -2,7 +2,7 @@
 .general_block {
   border-radius: 3px;
   border: 1px solid $grey-color-light;
-  box-shadow: 5px 5px 10px $box-shadow;
+  //  box-shadow: .5px .5px 1px $box-shadow;
   padding: 20px;
   margin: 20px;
 
@@ -53,11 +53,30 @@ a.toTop:hover {
   font-weight: normal;
   font-style: normal;
 }
+/*
 .my-site-title {
   color: $text-light;
   font-size: 44px;
   font-weight: 700;
   font-family: 'OctemberScript', cursive;
+}
+*/
+.my-site-title {
+  color: $text-light;
+  line-height: $base-line-height;
+  padding: 10px 20px;
+  border-radius: 2px;
+  &:hover {
+      color: #fff;
+      background-color: rgba(0, 0, 0, .125);
+      box-shadow: 1px 1px 3px $box-shadow;
+  }
+
+  -webkit-transition: all .25s ease;
+  -moz-transition: all .25s ease;
+  -o-transition: all .25s ease;
+  -ms-transition: all .25s ease;
+  transition: all .25s ease;
 }
 
 /* post title */
@@ -80,9 +99,9 @@ a.toTop:hover {
 
 /* page link */
 .page-link {
-  font-size: $mbig-font-size;
+  font-size: $lbig-font-size;
   @include media-query($on-palm) {
-    font-size: $big-font-size;
+    font-size: $mbig-font-size;
   }
 }
 
@@ -91,15 +110,22 @@ a.toTop:hover {
   float: left;
   padding: 5px 15px;
   margin: 5px;
-  color: $text-light;
-  background-color: rgba(0, 0, 0, .3);
+  color: $grey-color;
+  border: 1px solid $grey-color-light;
   border-radius: 2px;
-  box-shadow: 2px 2px 2px $box-shadow;
+  //  box-shadow: .5px .5px 1px $box-shadow;
+  font-size: $small-font-size;
 
   &:hover {
-    color: #fff;
+    color: $grey-color-light;
     background-color: rgba(0, 0, 0, .4); 
   }
+
+  -webkit-transition: all .25s ease;
+  -moz-transition: all .25s ease;
+  -o-transition: all .25s ease;
+  -ms-transition: all .25s ease;
+  transition: all .25s ease;
 }
 .clear-float {
   clear: both;
