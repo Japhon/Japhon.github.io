@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>计算机图形学-第四周周报</title>
+  <meta name="description" content="这个系统采用的是容量法（Volumetric method）。这是由一个累积的加权有符号距离函数组成的。一次处理一个深度图像，并把图像转换成一个距离函数，同时把当前的距离函数通过一个简单的方案和之前数据整合起来。">
+
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="http://japhon.github.io/blog/2015/08/10/week4-16.html">
+  <link rel="alternate" type="application/rss+xml" title="Japhon" href="http://japhon.github.io/feed.xml" />
+
+  <!-- user add -->
+  <!-- for icon -->
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+</head>
+
+
+  <body>
+
+    <header class="site-header">
+
+  <div class="wrapper">
+    
+    <a class="my-site-title page-link" href="/">
+      <i class="fa fa-th-large"></i>
+      Japhon
+    </a>
+    
+    <div class="menu-icon">
+      <a href="#" id="menu-btn">
+        <svg viewBox="0 0 18 15">
+          <path fill="#eee" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#eee" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#eee" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </a>
+    </div>
+
+    <nav class="site-nav">
+      <div class="trigger">
+        
+          
+          <a class="page-link" href="/blog/">
+            
+              <i class="fa fa-pencil-square-o"></i>
+            
+            Blog
+          </a>
+          
+        
+          
+          <a class="page-link" href="/essay/">
+            
+              <i class="fa fa-book"></i>
+            
+            Essay
+          </a>
+          
+        
+          
+        
+          
+          <a class="page-link" href="/life/">
+            
+              <i class="fa fa-book"></i>
+            
+            Life
+          </a>
+          
+        
+          
+        
+          
+        
+          
+          <a class="page-link" href="/about/">
+            
+              <i class="fa fa-book"></i>
+            
+            About
+          </a>
+          
+        
+      </div>
+    </nav>
+
+  </div>
+
+  <!-- user update -->
+  <div id="toggle-nav">
+    <nav class="mobile-nav">
+      <ul class="mobile-nav-list">
+        <hr class="cut-off" />
+        
+          
+            <a class="mobile-page-link page-link" href="/blog/">
+              <li class="mobile-nav-item">
+                
+                  <i class="fa fa-pencil-square-o"></i>
+                
+                Blog
+              </li>
+            </a>            
+          
+        
+          
+            <a class="mobile-page-link page-link" href="/essay/">
+              <li class="mobile-nav-item">
+                
+                  <i class="fa fa-book"></i>
+                
+                Essay
+              </li>
+            </a>            
+          
+        
+          
+        
+          
+            <a class="mobile-page-link page-link" href="/life/">
+              <li class="mobile-nav-item">
+                
+                  <i class="fa fa-book"></i>
+                
+                Life
+              </li>
+            </a>            
+          
+        
+          
+        
+          
+        
+          
+            <a class="mobile-page-link page-link" href="/about/">
+              <li class="mobile-nav-item">
+                
+                  <i class="fa fa-book"></i>
+                
+                About
+              </li>
+            </a>            
+          
+        
+      </ul>
+    </nav>
+  </div>
+
+</header>
+
+
+    <div class="page-content">
+      <div class="content_wrapper">
+        <div class="post">
+
+  <header class="post-header">
+    <div class="post_header_blank"></div>
+    <h1 class="post-title">计算机图形学-第四周周报</h1>
+    <p class="post-meta">
+      Post by <a href="/about/">Japhon</a> 
+            at 2015-08-10 
+            with tags 
+            
+              <a href="/tags/#计算机图形学" rel="nofollow">
+                计算机图形学
+              </a>
+              
+              
+            
+    </p>
+  </header>
+
+  <article class="post-content">
+    <h3 id="section">题目</h3>
+
+<p>A Volumetric Method for Building Complex Models from Range Images</p>
+
+<h3 id="section-1">概述</h3>
+
+<p>这个系统采用的是容量法（Volumetric method）。这是由一个累积的加权有符号距离函数组成的。一次处理一个深度图像，并把图像转换成一个距离函数，同时把当前的距离函数通过一个简单的方案和之前数据整合起来。与此同时，方法通过run-length编码来提高空间效率，通过同时配准体积元素和遍历扫描线来提高时间的效率，通过等值面提取（isosurface extraction）获得表面模型。最后使用边界细分来填补模型表面的空缺来优化模型。
+为了使得深度扫描能够得到很好的应用，我们希望表面重构技术具备以下性质：
+1. 增量更新；
+2.	模型能够表现出方向的不确定性；
+3.	能够填补模型的空缺；
+4.	确保离群值的稳定。
+然而，很多算法都只是包含了其中的一些性质。
+而本文提供的容量法就能够同时具备以下所有性质：</p>
+
+<ol>
+  <li>范围不确定度的表示-范围内的图像数据通常具有非对称分布的误差随着视觉传感器线路的主方向，</li>
+  <li>
+    <p>利用全方位数据-如果正确使用，这种冗余可以减少传感器噪声。</p>
+  </li>
+  <li>
+    <p>增量和顺序独立更新-增量更新使我们能够获得每一次扫描或小组扫描后的建模，让我们选择下一个最佳的扫描方向</p>
+  </li>
+  <li>
+    <p>时间和空间效率-复杂的对象可能需要很多范围的图像，以建立一个详细的模型</p>
+  </li>
+  <li>
+    <p>鲁棒性-异常值和系统范围的扭曲可以创建具有挑战性的情况下重建算法</p>
+  </li>
+  <li>
+    <p>对拓扑类型没有任何限制</p>
+  </li>
+  <li>在重建中填孔的能力-给定一组范围内的图像，不完全覆盖的对象，表面重新建设，必然是不完整的。在这些情况下，这种算法可以自动填充这些孔与合理的表面，产生一个模型，都是“无懈可击”和美观。</li>
+</ol>
+
+<h3 id="section-2">论文内容</h3>
+
+<h4 id="section-3">问题</h4>
+
+<p>通过集成配准的深度图像来进行表面重构的方法和技术已经有很大的发展，然而这些算法都存在这样或那样的问题从而不能很好的去满足应用的需求</p>
+
+<h4 id="volumetric-integration">体积集成（Volumetric integration）</h4>
+
+<p>通过集成从每一帧计算出来的距离函数以及权重（weight）来计算表面每个点的加权符号距离函数。</p>
+
+<p><img src="/photo/week4/pic1.jpg" alt="week4-1" /></p>
+
+<p>权重的选择依赖于方法所采用的深度扫描技术。并不是获取所有数据之后才集成，而是使用增量的方式，把当前深度图像的函数与已经计算好的由前面图像所集成得到的距离函数进行融合。深度的测量是有误差的，误差包括网格之间配准时产生的误差以及扫描技术固有的误差，这些误差可能发生在每个点的椭圆范围内。深度图像的集成使得我们可以计算出一个零点等值面。最后得出一个不完整的表面模型（带有洞的）。
+####空缺填补（Hole filling）
+作用在方法所构造出来的体积表面上而不是网格上。算法的关键在于把表面上所有的点区分为三个状态，分别是：unseen、empty、near the surface。</p>
+
+<p><img src="/photo/week4/pic2.jpg" alt="week4-2" /></p>
+
+<p>首先要把三维像素初始化为“unseen”状态。更新三维像素的状态，计算每个像素的距离函数以及权重。沿着扫描的视线来确定状态为“empty”三维像素，这样成为表面雕刻（surface carving）在有符号的距离函数的零点处提取等值面，同时也提取在“empty”和“unseen”状态间的表面。由于会导致锯齿的问题，所以我们需要通过后期过滤去模糊空缺处的表面的锯齿。
+####扫描技术的局限
+光学的方法只能提供外部表面的数据，对于内部的表面是看不到的。对于复杂的对象可能需要大量的扫描。对于光滑的表面以及黑色的表面都不能使得我们的扫描仪接受到信息。所以我们需要把对象画成平坦的灰色。</p>
+
+<h3 id="section-4">心得</h3>
+
+<p>这篇论文实在是太难看懂了，我只能稍微挑了点我稍微看懂了的写。一些部分也看得半懂不懂的样子，特别是后半部分，有点不知所云。感觉这一篇像是之前看到的那一篇的更深入的探讨，解决的问题也是更加深层次的东西。
+这里记录一下，之后如果自己看的论文多了相关的知识掌握得更多一点再回来看这篇可能会比较有收获。</p>
+
+  </article>
+
+  <nav class="pagination fn-clear" id="violet-paging">
+    <div class="pagination-list">
+      
+      <a class="prev" href="/blog/2015/08/02/week3-15.html" rel="bookmark"><i class="fa fa-chevron-circle-left"></i> 上一篇： 计算机图形学-第三周周报</a>
+      
+      <br />
+      
+      <a class="next" href="/essay/2015/08/14/Note-For-PM-13.html" rel="bookmark"><i class="fa fa-chevron-circle-right"></i> 下一篇： 产品实习快速成长手记</a>
+      
+    </div>
+  </nav>
+  
+  <!-- 多说评论框 start -->
+	  <div class="ds-thread" data-thread-key="14" data-title="计算机图形学-第四周周报" data-url="/blog/2015/08/10/week4-16.html"></div>
+  <!-- 多说评论框 end -->
+
+</div>
+
+      </div>
+    </div>
+
+    <footer class="site-footer">
+  <div class="wrapper">
+    <center><a href="https://github.com/japhon">Japhon</a> &copy; 2014 - 2015 &bull; All rights reserved. <span class="footer-new-line"></span>Hosted by <a href="https://github.com">GitHub</a> and powered by <a href="http://jekyllrb.com">Jekyll</a>.</center>
+  </div>
+</footer>
+
+    <a href="#" class="toTop">
+      <i class="fa fa-chevron-up"></i>
+    </a>
+
+    <script type="text/javascript" src="/js/jquery-2.1.1.js"></script>
+
+<!-- 多说公共JS代码 start  -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"japhon"};
+(function() {
+	var ds = document.createElement('script');
+	ds.type = 'text/javascript';ds.async = true;
+	ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+	ds.charset = 'UTF-8';
+	(document.getElementsByTagName('head')[0] 
+		|| document.getElementsByTagName('body')[0]).appendChild(ds);
+})();
+</script>
+<!-- 多说公共JS代码 end -->
+
+<!-- 滚动屏幕 -->
+<script type="text/javascript"> 
+$(document).ready(function() { 
+	$('a.toTop').click(function() { 
+		$('html, body').animate({scrollTop:0}, 'slow'); 
+		return false; 
+	}); 
+	$(function(){
+		$(".tags_home a").click(function(){
+			$("html,body").animate({ scrollTop: $($(this).attr("href")).offset().top - 20 + "px"}, 'slow');
+		});
+	});
+}) 
+</script> 
+<!-- 滚动屏幕 end -->
+
+<!-- 百度统计代码 -->
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F9c8c2388ce86bd311f66f91366baaa3e' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<!-- 百度统计代码 end -->
+
+<!-- 手机显示菜单 -->
+<script type="text/javascript">
+$(function() {
+	$('#toggle-nav').hide();
+	$('#menu-btn').click(function() {
+		$('#toggle-nav').slideToggle();
+	});
+});
+</script>
+<!-- 手机显示菜单 end -->
+
+
+  </body>
+
+</html>

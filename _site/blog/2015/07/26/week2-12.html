@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>计算机图形学-第二周周报</title>
+  <meta name="description" content="《REAL-TIME 3D FACE MODELING WITH A COMMODITY DEPTH CAMERA》通过记录（registering）和整合（integrating）多个用户头部的深度图来重建高质量的3D脸部模型，通过建立KinectFusion系统，先把分段的深度图像粗糙地记录和整合起来，然后提...">
+
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="http://japhon.github.io/blog/2015/07/26/week2-12.html">
+  <link rel="alternate" type="application/rss+xml" title="Japhon" href="http://japhon.github.io/feed.xml" />
+
+  <!-- user add -->
+  <!-- for icon -->
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+</head>
+
+
+  <body>
+
+    <header class="site-header">
+
+  <div class="wrapper">
+    
+    <a class="my-site-title page-link" href="/">
+      <i class="fa fa-th-large"></i>
+      Japhon
+    </a>
+    
+    <div class="menu-icon">
+      <a href="#" id="menu-btn">
+        <svg viewBox="0 0 18 15">
+          <path fill="#eee" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#eee" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#eee" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </a>
+    </div>
+
+    <nav class="site-nav">
+      <div class="trigger">
+        
+          
+          <a class="page-link" href="/blog/">
+            
+              <i class="fa fa-pencil-square-o"></i>
+            
+            Blog
+          </a>
+          
+        
+          
+          <a class="page-link" href="/essay/">
+            
+              <i class="fa fa-book"></i>
+            
+            Essay
+          </a>
+          
+        
+          
+        
+          
+          <a class="page-link" href="/life/">
+            
+              <i class="fa fa-book"></i>
+            
+            Life
+          </a>
+          
+        
+          
+        
+          
+        
+          
+          <a class="page-link" href="/about/">
+            
+              <i class="fa fa-book"></i>
+            
+            About
+          </a>
+          
+        
+      </div>
+    </nav>
+
+  </div>
+
+  <!-- user update -->
+  <div id="toggle-nav">
+    <nav class="mobile-nav">
+      <ul class="mobile-nav-list">
+        <hr class="cut-off" />
+        
+          
+            <a class="mobile-page-link page-link" href="/blog/">
+              <li class="mobile-nav-item">
+                
+                  <i class="fa fa-pencil-square-o"></i>
+                
+                Blog
+              </li>
+            </a>            
+          
+        
+          
+            <a class="mobile-page-link page-link" href="/essay/">
+              <li class="mobile-nav-item">
+                
+                  <i class="fa fa-book"></i>
+                
+                Essay
+              </li>
+            </a>            
+          
+        
+          
+        
+          
+            <a class="mobile-page-link page-link" href="/life/">
+              <li class="mobile-nav-item">
+                
+                  <i class="fa fa-book"></i>
+                
+                Life
+              </li>
+            </a>            
+          
+        
+          
+        
+          
+        
+          
+            <a class="mobile-page-link page-link" href="/about/">
+              <li class="mobile-nav-item">
+                
+                  <i class="fa fa-book"></i>
+                
+                About
+              </li>
+            </a>            
+          
+        
+      </ul>
+    </nav>
+  </div>
+
+</header>
+
+
+    <div class="page-content">
+      <div class="content_wrapper">
+        <div class="post">
+
+  <header class="post-header">
+    <div class="post_header_blank"></div>
+    <h1 class="post-title">计算机图形学-第二周周报</h1>
+    <p class="post-meta">
+      Post by <a href="/about/">Japhon</a> 
+            at 2015-07-26 
+            with tags 
+            
+              <a href="/tags/#计算机图形学" rel="nofollow">
+                计算机图形学
+              </a>
+              
+              
+            
+    </p>
+  </header>
+
+  <article class="post-content">
+    <h3 id="section">题目</h3>
+
+<p>REAL-TIME 3D FACE MODELING WITH A COMMODITY DEPTH CAMERA</p>
+
+<h3 id="section-1">概述</h3>
+
+<p>本系统通过记录（registering）和整合（integrating）多个用户头部的深度图来重建高质量的3D脸部模型，通过建立KinectFusion系统，先把分段的深度图像粗糙地记录和整合起来，然后提供一个快速技术，来达到实时运行在普通商用硬件（Kinect）上。</p>
+
+<h3 id="section-2">系统概览：</h3>
+
+<p><img src="/photo/week2/pic1.jpg" alt="week2-1" /></p>
+
+<h4 id="section-3">解读：</h4>
+
+<p>构建3D人脸模型现在有两种比较主流的方式，一种是使用无源（passive）传感器得到多张2D的图像去重构，还有一种是利用主动式（actor）传感器去直接生成。第二种方法显然在实现上是比较方便的，但是过去因为受限于价格的问题，所以迟迟没有很好的发展。
+现在，因为微软有Kinect的发布，所以让普遍地使用第二种方法成为现实。本系统就是建立在Kinect上，采用第二种方法来实现的。</p>
+
+<p>因为Kinect产生的实时的深度图总是有比较多的“噪声”（noise），所以本系统使用了KinectFusion系统，使用户可以在固定得Kinect前只是简单地移动一下头部，就可以帮助生成高质量的3D脸部模型。</p>
+
+<h3 id="section-4">论文内容</h3>
+
+<h4 id="kinectfusion">关于KinectFusion</h4>
+
+<p>本系统没有采用一般的模型去生成3D脸部，也没有使用空间滤波去处理噪声。而是采用一种KinectFusion的系统。这种系统本来是用来生成房间大小的3D模型的。具体操作方法是拿着Kinect绕着房间走一圈来生成房间这个环境的3D模型。利用这种思想，本系统稍微做了修改，就是固定住了Kinect，然后让人的头部在Kinect前面移动，达到生成头部模型的效果。</p>
+
+<h4 id="section-5">数据采集</h4>
+
+<p>利用Kinect采集在拍摄视频速率下的深度信息，每一个时间点都会得到一列数据。</p>
+
+<h4 id="section-6">分割</h4>
+
+<p>首先假设人是在Kinect的前方，保证坐直的姿势，并且头部和肩膀的部分是清晰可见的，然后根据头部比躯干的宽度要宽的前置条件，从而找到头部的部分。</p>
+
+<h4 id="section-7">过滤</h4>
+
+<p>使用双边滤波，消除局部方差，对头部周围的信息，例如头发等噪声进行过滤。</p>
+
+<h4 id="back-projection">反投影（Back-projection）</h4>
+
+<p>首先需要创建一个点云的背面投影到三维顶点的深度像素和估计每个顶点的表面法线。然后产生一个顶点地图，通过背面投影到相机的参考帧的每一个深度像素。最后通过交叉乘积估计每个点的表面法向量。</p>
+
+<h4 id="registration">登记（Registration）</h4>
+
+<p>确定刚体变换，对每个顶点映射，将顶点和表面法向量生成全局坐标。使用附近点迭代（Iterative closest point）来进行快速生成，但是不可避免地会出现误差，所以使用投影数据关联最小化误差矩阵。</p>
+
+<h4 id="section-8">整合</h4>
+
+<p>一旦被确定是刚性变化，就可以用卷来表示一个头部，深度图像就可以被整合到三维模型中。该卷包含像素，其中每个像素包含重量和标记距离最近的表面沿照相机射线。</p>
+
+<h4 id="section-9">渲染</h4>
+
+<p>渲染的卷显示当前状态的模型给用户，这样他们就可以重新定位他们的头部，以增强不同部分模型。此外，使用当前状态的卷来细化顶点地图和法线贴图。更新基于该模型的顶点和法线，提高标记步骤的稳定性。</p>
+
+<h4 id="section-10">结果</h4>
+
+<p>这个系统出来的效果，可以捕捉到更多的细节，并且基本可以实现实时的显示。可以在实验机器中实现25帧的播放。</p>
+
+<h3 id="section-11">心得</h3>
+
+<p>这篇论文相对来说写的思路比较清晰一点，而且实现的不会太复杂，做了一个实时的脸部重建。公式之间不会有太复杂的逻辑关系。总体比上一篇好懂很多。</p>
+
+<p>看的两篇都是关于Kinect的研究的，都是三维重建的，觉得可能现在的研究也比较集中在这一块。我的想法是毕业设计做一些看起来比较有交互比较可操作的东西，好玩一点有想法一点的，不要太单纯的理论研究。因为觉得现在研究的话很多论文都研究得非常的深入了，如果再在这上面想要有所突破可能我现阶段的能力还比较有限。所以初步的想法是参照一些论文把一些技术点实现出来，然后在这基础上做一些动作识别之类的转化为比较可用实用的应用。</p>
+
+<p>和师兄交流之后，感觉基于Kinect如果要有一些深入的开发的话，可能还会不可避免地涉及到一些模式识别的知识。所以可能自己还要补充一点相关的知识，不能像现在的知识面这么窄来思考问题。</p>
+
+  </article>
+
+  <nav class="pagination fn-clear" id="violet-paging">
+    <div class="pagination-list">
+      
+      <a class="prev" href="/blog/2015/07/20/week1-11.html" rel="bookmark"><i class="fa fa-chevron-circle-left"></i> 上一篇： 计算机图形学-第一周周报</a>
+      
+      <br />
+      
+      <a class="next" href="/blog/2015/08/02/week3-15.html" rel="bookmark"><i class="fa fa-chevron-circle-right"></i> 下一篇： 计算机图形学-第三周周报</a>
+      
+    </div>
+  </nav>
+  
+  <!-- 多说评论框 start -->
+	  <div class="ds-thread" data-thread-key="10" data-title="计算机图形学-第二周周报" data-url="/blog/2015/07/26/week2-12.html"></div>
+  <!-- 多说评论框 end -->
+
+</div>
+
+      </div>
+    </div>
+
+    <footer class="site-footer">
+  <div class="wrapper">
+    <center><a href="https://github.com/japhon">Japhon</a> &copy; 2014 - 2015 &bull; All rights reserved. <span class="footer-new-line"></span>Hosted by <a href="https://github.com">GitHub</a> and powered by <a href="http://jekyllrb.com">Jekyll</a>.</center>
+  </div>
+</footer>
+
+    <a href="#" class="toTop">
+      <i class="fa fa-chevron-up"></i>
+    </a>
+
+    <script type="text/javascript" src="/js/jquery-2.1.1.js"></script>
+
+<!-- 多说公共JS代码 start  -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"japhon"};
+(function() {
+	var ds = document.createElement('script');
+	ds.type = 'text/javascript';ds.async = true;
+	ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+	ds.charset = 'UTF-8';
+	(document.getElementsByTagName('head')[0] 
+		|| document.getElementsByTagName('body')[0]).appendChild(ds);
+})();
+</script>
+<!-- 多说公共JS代码 end -->
+
+<!-- 滚动屏幕 -->
+<script type="text/javascript"> 
+$(document).ready(function() { 
+	$('a.toTop').click(function() { 
+		$('html, body').animate({scrollTop:0}, 'slow'); 
+		return false; 
+	}); 
+	$(function(){
+		$(".tags_home a").click(function(){
+			$("html,body").animate({ scrollTop: $($(this).attr("href")).offset().top - 20 + "px"}, 'slow');
+		});
+	});
+}) 
+</script> 
+<!-- 滚动屏幕 end -->
+
+<!-- 百度统计代码 -->
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F9c8c2388ce86bd311f66f91366baaa3e' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<!-- 百度统计代码 end -->
+
+<!-- 手机显示菜单 -->
+<script type="text/javascript">
+$(function() {
+	$('#toggle-nav').hide();
+	$('#menu-btn').click(function() {
+		$('#toggle-nav').slideToggle();
+	});
+});
+</script>
+<!-- 手机显示菜单 end -->
+
+
+  </body>
+
+</html>

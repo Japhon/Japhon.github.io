@@ -21,6 +21,18 @@ code {
   font-family: consolas, 'Source Code Pro', monaco, monospace;
 }
 
+/* tools */
+.post_header_blank {
+  min-height: 30px;
+  @include media-query($on-palm) {
+    min-height: 20px;
+  }
+  @include media-query($on-small-screen) {
+    min-height: 10px;
+  }
+}
+
+
 /* to top */
 a.toTop {
   width: 40px;
@@ -144,3 +156,8 @@ a.toTop:hover {
     color: $grey-color;
   }
 }
+
+/* about */
+.about_zh {
+  color: $grey-color;
+} 

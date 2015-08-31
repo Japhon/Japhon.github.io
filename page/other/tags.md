@@ -19,7 +19,7 @@ permalink: /tags/
 
   {% for tag in site.tags %}
     <div id="{{ tag[0] }}" class="general_block">
-      <h4>{{ tag[0] }}</h4>
+      <h3>{{ tag[0] }}</h3>
       <ul>
         {% for post in tag[1] %}
           <li class="tags_post_list">
@@ -43,20 +43,6 @@ permalink: /tags/
     {% endfor %}
 
   {% endfor %}
--->
-
-<!-- 原post
-  <ul class="post-list">
-    {% for post in site.categories.blog %}
-      <li>
-        <h2>
-            <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-        </h2>
-        <span class="post-meta">{{ post.date | date: "%Y-%-m-%-d" }}</span><br>
-        <p class="my-abstract"> [摘要] {{ post.abstract }} </p>       
-      </li>
-    {% endfor %}
-  </ul>
 -->
 
 </div>

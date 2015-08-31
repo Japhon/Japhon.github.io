@@ -23,7 +23,7 @@ $(document).ready(function() {
 	}); 
 	$(function(){
 		$(".tags_home a").click(function(){
-			$("html,body").animate({ scrollTop:$($(this).attr("href")).offset().top + "px"}, 'slow');
+			$("html,body").animate({ scrollTop: $($(this).attr("href")).offset().top - 20 + "px"}, 'slow');
 		});
 	});
 }) 
