@@ -31,7 +31,9 @@ code {
     min-height: 10px;
   }
 }
-
+.hrstyle {
+  border: 1px $grey-color-light solid;
+}
 
 /* to top */
 a.toTop {
