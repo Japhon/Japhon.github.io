@@ -31,8 +31,10 @@ img {
 
 html{
 	background-image: url(/photo/holybg.jpg);
+	background-color: #232323;
 	background-position: center center;
 	background-size: cover;
+	background-repeat: no-repeat;
 	background-attachment: scroll;
 }
 #page{
@@ -85,10 +87,10 @@ a:hover {
 #card li {
 	position: absolute; 
 	list-style: none; 
-	width: 200px; 
-	height: 200px; 
+	width: 190px; 
+	height: 190px; 
 	overflow: hidden; 
-	line-height: 200px; 
+	line-height: 190px; 
 	background-color: rgba(78, 78, 78, .6); 
 	text-align: center; 
 	font-size: 4rem; 
@@ -99,14 +101,14 @@ a:hover {
 	transition: background-color ease .3s, top ease .5s, left ease .5s, width ease .5s, height ease .5s;
 }
 #card li.half {
-	height: 95px; 
-	line-height: 95px; 
+	height: 90px; 
+	line-height: 90px; 
 	font-size: 2rem;
 }
 #card li.quarter {
-	width: 95px; 
-	height: 95px; 
-	line-height: 95px; 
+	width: 90px; 
+	height: 90px; 
+	line-height: 90px; 
 	font-size: 2rem;
 }
 #card a {
@@ -149,33 +151,33 @@ a:hover {
 	top: 0; 
 	opacity: 1;
 }
-#link-blog {
+#link-mail {
 	left: 0; 
 	top: 0;
 }
 #link-blog:hover {
-	background-color: #e73;
+	background-color: #1589FF;
 }
-#link-works:hover {
-	background-color: #5d6875;
+#link-about:hover {
+	background-color: #736AFF;
 }
 #link-github:hover {
-	background-color: #333;
+	background-color: grey;
 }
 #link-mail:hover {
-	background-color: #595;
+	background-color: orange;
 }
 #link-mail span:after {
 	content: "Email"; 
 }
 #link-zhihu:hover {
-	background-color: #0178d8;
+	background-color: blue;
 }
 #link-weibo:hover {
-	background-color: #c41327;
+	background-color: red;
 }
-#link-more:hover {
-	background-color: #384623;
+#link-wechat:hover {
+	background-color: #4AA02C;
 }
 #link-weibo span {
 	top: 0;
@@ -188,24 +190,40 @@ a:hover {
 
 @media (min-width: 801px) {
 	#card {
-		width: 725px;
+		width: 600px;
 	}
 	#card ul {
-		width: 725px; height: 200px;
+		width: 600px; 
+		height: 200px;
 	}
-	#link-works {
-		left: 210px; top: 0;
+	#link-blog {
+		left: 200px; 
+		top: 0;
+	}
+	#link-about {
+		left: 0; 
+		top: 100px;
 	}
 	#link-mail {
-		left: 420px; top: 0;}
+		left: 0; 
+		top: 0;
+	}
 	#link-weibo {
-		left: 630px; top: 0;}
+		left: 500px; 
+		top: 100px;
+	}
 	#link-github {
-		left: 420px; top: 105px;}
+		left: 100px; 
+		top: 0;
+	}
 	#link-zhihu {
-		left: 525px; top: 105px;}
-	#link-more {
-		left: 630px; top: 105px;}
+		left: 400px; 
+		top: 100px;
+	}
+	#link-wechat {
+		left: 400px; 
+		top: 0;
+	}
 	#card ul {
 		-webkit-transition: width ease .5s;
 		-moz-transition: width ease .5s;
@@ -239,7 +257,7 @@ a:hover {
 		width: 515px; 
 		height: 305px;
 	}
-	#link-works {
+	#link-about {
 		left: 210px; 
 		top: 0;
 	}
@@ -260,7 +278,7 @@ a:hover {
 		left: 420px; 
 		top: 105px;
 	}
-	#link-more {
+	#link-wechat {
 		left: 420px; 
 		top: 210px;
 	}
@@ -274,7 +292,7 @@ a:hover {
 		width: 410px; 
 		height: 410px;
 	}
-	#link-works {
+	#link-about {
 		left: 210px; 
 		top: 0;
 	}
@@ -295,7 +313,7 @@ a:hover {
 		left: 105px; 
 		top: 315px;
 	}
-	#link-more {
+	#link-wechat {
 		left: 315px; 
 		top: 315px;
 	}
@@ -336,7 +354,7 @@ a:hover {
 		left: 0;
 		top: 0;
 	}
-	#link-works{
+	#link-about{
 		left: 51%; 
 		top: 0;
 	}
@@ -356,7 +374,7 @@ a:hover {
 		left: 25.5%; 
 		top: 76.5%;
 	}
-	#link-more{
+	#link-wechat{
 		left: 76.5%; 
 		top: 76.5%;
 	}
@@ -375,16 +393,136 @@ a:hover {
 
 /* user update */
 .my_site_name {
-	margin: 10px;
+	margin: 10px 0;
 	font-size: 96px;
 	font-weight: normal;
+	-webkit-transition: font-size ease .5s;
+	-moz-transition: font-size ease .5s;
+	-ms-transition: font-size ease .5s;
+	transition: font-size ease .5s;
 }
 .my_site_slogan {
 	font-family: consolas, 'Source Code Pro', monaco, monospace;
 	font-size: 24px;
 	margin: 0;
 	letter-spacing: -1px;
+	-webkit-transition: font-size ease .5s;
+	-moz-transition: font-size ease .5s;
+	-ms-transition: font-size ease .5s;
+	transition: font-size ease .5s;
 }
 .blank_line {
 	height: 50px;
+	-webkit-transition: height ease .5s;
+	-moz-transition: height ease .5s;
+	-ms-transition: height ease .5s;
+	transition: height ease .5s;
+}
+@media (max-width: 600px) {
+	.blank_line {
+		height: 30px;
+	}
+	.my_site_name {
+		margin: 6px 0;
+	}
+}
+@media (max-width: 450px) {
+	.blank_line {
+		height: 20px;
+	}
+	.my_site_name {
+		margin: 4px 0;
+		font-size: 84px;
+	}
+	.my_site_slogan {
+		font-size: 22px;
+	}
+}
+@media (max-width: 320px) {
+    .blank_line {
+		height: 10px;
+	}
+	.my_site_name {
+		margin: 3px 0;
+		font-size: 72px;
+	}
+	.my_site_slogan {
+		font-size: 20px;
+	}
+}
+
+/* dialog */
+.modal {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	margin-left: -150px;
+	margin-top: -285px;
+	overflow-y: auto;
+	padding: 1em;
+	background: #fff;
+	z-index: 100;
+	opacity: 0;
+	pointer-events: none;
+	-webkit-transition: all 0.25s ease-out;
+	-moz-transition: all 0.25s ease-out;
+	-ms-transition: all 0.25s ease-out;
+	-o-transition: all 0.25s ease-out;
+	transition: all 0.25s ease-out;
+}
+.modal a {
+	margin-bottom: 0;
+}
+.modal.show {
+	opacity: 1;
+	pointer-events: auto;
+}
+.fancy.modal {
+	box-shadow: 0 3px 6px rgba(0,0,0,0.25);
+	border: 1px solid #bbb;
+	background: -webkit-linear-gradient(top,#fff,#ddd);
+	background: -moz-linear-gradient(top,#fff,#ddd);
+	background: linear-gradient(top,#fff,#ddd);
+	-webkit-transform:translateY(-100%);
+	-moz-transform:translateY(-100%);
+	-ms-transform:translateY(-100%);
+	-o-transform:translateY(-100%);
+	transform:translateY(-100%);
+}
+.fancy.show {
+	-webkit-transform:translateY(0%);
+	-moz-transform:translateY(0%);
+	-ms-transform:translateY(0%);
+	-o-transform:translateY(0%);
+	transform:translateY(0%);
+}
+.wechat_img {
+	background-image: url("/photo/wechat_img.jpg");
+	width: 266px;
+	height: 266px;
+	background-size: contain;
+}
+.button {
+	-webkit-appearance: none;
+	-webkit-font-smoothing: antialiased;
+	background-color: #999;
+	border-radius: 2px;
+	box-shadow: rgba(0, 0, 0, 0.2) 0px -2px 0px 0px inset;
+	color: rgb(255, 255, 255);
+	cursor: pointer;
+	display: inline-block;
+	font-family: 'Proxima Nova', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font-size: 16px;
+	font-weight: bold;
+	margin: 15px 0;
+	padding: 10px 24px;
+	text-decoration: none;
+	transition-delay: 0s;
+	transition-duration: 0.3s;
+	transition-property: background-color;
+	transition-timing-function: ease-out;
+}
+.button:hover {
+	text-decoration: none;
+	background-color: #666;
 }
