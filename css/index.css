@@ -87,7 +87,7 @@ a:hover {
 #card li {
 	position: absolute; 
 	list-style: none; 
-	width: 190px; 
+	width: 250px; 
 	height: 190px; 
 	overflow: hidden; 
 	line-height: 190px; 
@@ -100,15 +100,19 @@ a:hover {
 	-ms-transition: background-color ease .3s, top ease .5s, left ease .5s, width ease .5s, height ease .5s;
 	transition: background-color ease .3s, top ease .5s, left ease .5s, width ease .5s, height ease .5s;
 }
-#card li.half {
+#card li.aboutbx {
 	height: 90px; 
 	line-height: 90px; 
 	font-size: 2rem;
 }
 #card li.quarter {
-	width: 90px; 
+	width: 120px; 
 	height: 90px; 
 	line-height: 90px; 
+	font-size: 2rem;
+}
+#card li.mailbx {
+	width: 120px; 
 	font-size: 2rem;
 }
 #card a {
@@ -151,33 +155,33 @@ a:hover {
 	top: 0; 
 	opacity: 1;
 }
-#link-mail {
+#link-blog {
 	left: 0; 
 	top: 0;
 }
 #link-blog:hover {
-	background-color: #1589FF;
+	background-color: #97B4FF;
 }
 #link-about:hover {
-	background-color: #736AFF;
+	background-color: #A88AFF;
 }
 #link-github:hover {
-	background-color: grey;
+	background-color: #7E7FE8;
 }
 #link-mail:hover {
-	background-color: orange;
+	background-color: #7EB7E8;
 }
 #link-mail span:after {
 	content: "Email"; 
 }
 #link-zhihu:hover {
-	background-color: blue;
+	background-color: #8AE8FF;
 }
 #link-weibo:hover {
-	background-color: red;
+	background-color: #72E8E0;
 }
 #link-wechat:hover {
-	background-color: #4AA02C;
+	background-color: #7DFFD1;
 }
 #link-weibo span {
 	top: 0;
@@ -190,39 +194,39 @@ a:hover {
 
 @media (min-width: 801px) {
 	#card {
-		width: 600px;
+		width: 780px;
 	}
 	#card ul {
-		width: 600px; 
+		width: 780px; 
 		height: 200px;
 	}
 	#link-blog {
-		left: 200px; 
+		left: 0; 
 		top: 0;
 	}
 	#link-about {
-		left: 0; 
-		top: 100px;
+		left: 260px; 
+		top: 0;
 	}
 	#link-mail {
-		left: 0; 
+		left: 520px; 
 		top: 0;
 	}
 	#link-weibo {
-		left: 500px; 
+		left: 390px; 
 		top: 100px;
 	}
 	#link-github {
-		left: 100px; 
+		left: 650px; 
 		top: 0;
 	}
 	#link-zhihu {
-		left: 400px; 
+		left: 650px; 
 		top: 100px;
 	}
 	#link-wechat {
-		left: 400px; 
-		top: 0;
+		left: 260px; 
+		top: 100px;
 	}
 	#card ul {
 		-webkit-transition: width ease .5s;
@@ -251,36 +255,42 @@ a:hover {
 
 @media (min-width: 551px) and (max-width: 800px) {
 	#card { 
-		width: 515px;
+		width: 520px;
 	}
 	#card ul {
-		width: 515px; 
-		height: 305px;
+		width: 520px; 
+		height: 300px;
 	}
 	#link-about {
-		left: 210px; 
+		left: 260px; 
 		top: 0;
 	}
+	/*
 	li#link-mail.half {
 		left: 0; 
 		top: 210px; 
 		width: 305px;
 	}
+	*/
+	#link-mail {
+		left: 260px;
+		top: 100px;
+	}
 	#link-weibo {
-		left: 315px; 
-		top: 210px;
+		left: 130px;
+		top: 200px;
 	}
 	#link-github {
-		left: 420px; 
-		top: 0;
+		left: 390px; 
+		top: 100px;
 	}
 	#link-zhihu {
-		left: 420px; 
-		top: 105px;
+		left: 390px; 
+		top: 200px;
 	}
 	#link-wechat {
-		left: 420px; 
-		top: 210px;
+		left: 0; 
+		top: 200px;
 	}
 }
 
@@ -293,29 +303,28 @@ a:hover {
 		height: 410px;
 	}
 	#link-about {
-		left: 210px; 
-		top: 0;
-	}
-	li#link-mail.half {
 		left: 0; 
-		top: 210px; 
-		width: 410px;
+		top: 200px;
+	}
+	#link-mail {
+		left: 260px; 
+		top: 200px; 
 	}
 	#link-weibo {
-		left: 210px; 
-		top: 315px;
+		left: 130px; 
+		top: 300px;
 	}
 	#link-github {
-		left: 0; 
-		top: 315px;
+		left: 260px; 
+		top: 0;
 	}
 	#link-zhihu {
-		left: 105px; 
-		top: 315px;
+		left: 260px; 
+		top: 100px;
 	}
 	#link-wechat {
-		left: 315px; 
-		top: 315px;
+		left: 0; 
+		top: 300px;
 	}
 }
 @media (max-width: 480px){
@@ -338,11 +347,16 @@ a:hover {
 		padding: 50%;
 	}
 	#card li{
-		width: 49%;
+		width: 100%;
 		height: 49%;
 	}
-	#card li.half{
-		width: 100%; 
+	#card li.mailbx {
+		width: 49%; 
+		height: 23.5%;
+		line-height: 90px;
+	}
+	#card li.aboutbx {
+		width: 49%; 
 		height: 23.5%;
 	}
 	#card li.quarter{
@@ -354,27 +368,30 @@ a:hover {
 		left: 0;
 		top: 0;
 	}
-	#link-about{
-		left: 51%; 
-		top: 0;
+	#link-blog {
+		line-height: 100px;
 	}
-	li#link-mail.half{
+	#link-about {
 		left: 0; 
 		top: 51%;
 	}
-	#link-weibo{
+	#link-mail {
+		left: 51%; 
+		top: 51%;
+	}
+	#link-weibo {
 		left: 51%; 
 		top: 76.5%;
 	}
-	#link-github{
+	#link-github {
 		left: 0%; 
 		top: 76.5%;
 	}
-	#link-zhihu{
+	#link-zhihu {
 		left: 25.5%; 
 		top: 76.5%;
 	}
-	#link-wechat{
+	#link-wechat {
 		left: 76.5%; 
 		top: 76.5%;
 	}
@@ -383,7 +400,10 @@ a:hover {
 	#card li {
 		line-height: 147px;
 	}
-	#card li.half {
+	#card li.mailbx {
+		line-height: 70px;
+	}
+	#card li.bx {
 		line-height: 70px;
 	}
 	#card li.quarter {
