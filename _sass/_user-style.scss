@@ -162,4 +162,22 @@ a.toTop:hover {
 /* about */
 .about_zh {
   color: $grey-color;
-} 
+}
+.zhifucode {
+  border: 1px solid $grey-color-light;
+  border-radius: 2px;
+  margin: 10px;
+  padding: 20px;
+}
+.contain {
+  float: left;
+  width: 50%;
+  @include media-query($on-palm) {
+    float: none;
+    width: 80%;
+  }
+  @include media-query($on-small-screen) {
+    float: none;
+    width: 100%;
+  }
+}

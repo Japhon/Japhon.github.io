@@ -61,7 +61,18 @@ If you like this blog, you can support me by the following ways.<br>
 
 <div>
 	<center>
-		<img src="/photo/alibaba.jpg" width="40%"></img>
+		<div class="contain">
+			<div class="zhifucode">	
+				<img  src="/photo/alibaba.jpg"></img>
+				<p>支付宝扫一扫捐赠</p>
+			</div>
+		</div>
+		<div class="contain">
+			<div class="zhifucode">
+				<img src="/photo/weixinzhifu.jpg"></img>
+				<p>微信扫一扫捐赠</p>
+			</div>
+		</div>
 	</center>
 </div>
 
