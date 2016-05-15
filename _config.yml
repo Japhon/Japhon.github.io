@@ -7,7 +7,7 @@ email:               sysu.zhuang@gmail.com
 duoshuo:             japhon
 github:              japhon
 weibo:               zhuangzefan
-rouge:               pygments
+highlighter:         pygments
 safe:                true
 title:               Japhon
 

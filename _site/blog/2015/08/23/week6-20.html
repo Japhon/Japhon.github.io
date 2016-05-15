@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>2D草图三维化</title>
+  <meta name="description" content="文章介绍了一种新的基于草图的建模方法，在二维上进行两个方向（前方和上方）的草图的绘制，画出轮廓之后，通过“组装”轮廓的形状，转化生成3D的模型。即将三维空间上的模型构建搬到了二维空间中来完成。">
+
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="http://japhon.github.io/blog/2015/08/23/week6-20.html">
+  <link rel="alternate" type="application/rss+xml" title="Japhon" href="http://japhon.github.io/feed.xml" />
+
+  <!-- user add -->
+  <!-- for icon -->
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+</head>
+
+
+  <body>
+
+    <header class="site-header">
+
+  <div class="wrapper">
+    
+    <a class="my-site-title page-link" href="/">
+      <i class="fa fa-th-large"></i>
+      Japhon
+    </a>
+    
+    <div class="menu-icon">
+      <a href="#" id="menu-btn">
+        <svg viewBox="0 0 18 15">
+          <path fill="#eee" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#eee" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#eee" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </a>
+    </div>
+
+    <nav class="site-nav">
+      <div class="trigger">
+        
+          
+          <a class="page-link" href="/blog/">
+            
+              <i class="fa fa-pencil-square-o"></i>
+            
+            Blog
+          </a>
+          
+        
+          
+          <a class="page-link" href="/essay/">
+            
+              <i class="fa fa-book"></i>
+            
+            Essay
+          </a>
+          
+        
+          
+        
+          
+          <a class="page-link" href="/life/">
+            
+              <i class="fa fa-book"></i>
+            
+            Life
+          </a>
+          
+        
+          
+        
+          
+        
+          
+          <a class="page-link" href="/about/">
+            
+              <i class="fa fa-book"></i>
+            
+            About
+          </a>
+          
+        
+      </div>
+    </nav>
+
+  </div>
+
+  <!-- user update -->
+  <div id="toggle-nav">
+    <nav class="mobile-nav">
+      <ul class="mobile-nav-list">
+        <hr class="cut-off" />
+        
+          
+            <a class="mobile-page-link page-link" href="/blog/">
+              <li class="mobile-nav-item">
+                
+                  <i class="fa fa-pencil-square-o"></i>
+                
+                Blog
+              </li>
+            </a>            
+          
+        
+          
+            <a class="mobile-page-link page-link" href="/essay/">
+              <li class="mobile-nav-item">
+                
+                  <i class="fa fa-book"></i>
+                
+                Essay
+              </li>
+            </a>            
+          
+        
+          
+        
+          
+            <a class="mobile-page-link page-link" href="/life/">
+              <li class="mobile-nav-item">
+                
+                  <i class="fa fa-book"></i>
+                
+                Life
+              </li>
+            </a>            
+          
+        
+          
+        
+          
+        
+          
+            <a class="mobile-page-link page-link" href="/about/">
+              <li class="mobile-nav-item">
+                
+                  <i class="fa fa-book"></i>
+                
+                About
+              </li>
+            </a>            
+          
+        
+      </ul>
+    </nav>
+  </div>
+
+</header>
+
+
+    <div class="page-content">
+      <div class="content_wrapper">
+        <div class="post">
+
+  <header class="post-header">
+    <div class="post_header_blank"></div>
+    <h1 class="post-title">2D草图三维化</h1>
+    <p class="post-meta">
+      Post by <a href="/about/">Japhon</a> 
+            at 2015-08-23 
+            with tags 
+            
+              <a href="/tags/#计算机图形学" rel="nofollow">
+                计算机图形学
+              </a>
+              
+              
+            
+    </p>
+  </header>
+
+  <div class="post_header_blank"></div>
+  <hr>
+  <div class="post_header_blank"></div>
+
+  <article class="post-content">
+    <h3 id="section">题目</h3>
+
+<p>3D Modeling with Silhouettes</p>
+
+<h3 id="section-1">概述</h3>
+
+<p>文章介绍了一种新的基于草图的建模方法，在二维上进行两个方向（前方和上方）的草图的绘制，画出轮廓之后，通过“组装”轮廓的形状，转化生成3D的模型。即将三维空间上的模型构建搬到了二维空间中来完成。</p>
+
+<h3 id="section-2">论文内容</h3>
+
+<h4 id="section-3">简介</h4>
+
+<p>文章提出一种新的基于草图的建模方式，可以针对业余和专业的用户。设计师首先在二维中勾勒出一个物体，通常是从正面、侧面和顶部的视图，然后使用这些草图作为一个参考，在构建一个计算机上的三维模型。</p>
+
+<p>从算法的角度，文章采用的是一个在CAD-CAM比较具有挑战性的方法：布尔运算（具体后面详述）。通过视觉上简单的交叉思想，就可以运用二维图像进行复杂的三维空间模型的构建。</p>
+
+<p><img src="/photo/week6/pic1.jpg" alt="pic1" /></p>
+
+<p><strong>解读</strong></p>
+
+<p>在我的印象中，包括从初中以来接触的只是，三维的模型应该是要由三幅图像，即xyz轴三幅图像才能形成完成的三维物体的。而且还没有办法包含模型内部的一些特殊的构建。而文章在这一点上面做出了很大的突破，只用了两幅图片，发现其实这两幅图片已经涵盖了所有的信息点了，然后解决模型内部的细节构建，则是运用了我们在计算机中十分常见的布尔运算，使用不同的性质（颜色）的线来代表不同的物体，然后直接生成模型后进行布尔操作，就生成了最终的结果。这方法的巧妙之处给我之前的思维带来了很大的冲击。</p>
+
+<h4 id="section-4">方法</h4>
+
+<p>（文章花了比较多的篇幅在介绍用户接口，即如何使用它，这里就不加详述，主要关注其算法实现的部分）</p>
+
+<p>一个零件的形状是模拟它的轮廓线的交叉点，这是相同的视觉船体（hull）。减法部分被切走，通过相交的子牵引部分的轮廓线，并减去从原来的部分的结果。</p>
+
+<p>在之前的方法中，计算任意多面体的布尔操作涉及许多特殊的情况，并在网格的一部分，一个错误会使其无法生成正确的表面其他地方。这是众所周知的难以产生强大的实施。</p>
+
+<p>在本文中提出了一个简单的算法，可以计算出固体产生任意CSG树，从而应用于轮廓圆柱体。由于二维布尔运算碰到的特殊情况远比三维布尔运算少，由此产生的CSG实体各个方面依赖性就显著降低，所以这个算法易于实现，且具有鲁棒性。</p>
+
+<p><img src="/photo/week6/pic2.jpg" alt="pic2" /></p>
+
+<p>最后还引入了一个简单的平滑算法的操作，生成一个表面拉普拉斯变化幅度最小的表面，并且仍然具有原始输入的形状。</p>
+
+<h4 id="csg">CSG固体计算</h4>
+
+<p>我们通过检查每一个潜在的平面上一个最终的三维实体可能，计算一个CSG形状固体算法。每一个输入轮廓的每一部分都有一个这样的平面：它是一个平面，它有一个正常的正交的段和轮廓的观看方向。（将所有曲线轮廓为折线）</p>
+
+<p>这个算法寻找对应于平面的表面上的收益如下：</p>
+
+<p>首先，我们找到了每个轮廓的交点与平面的。我们标记这些交叉多边形集成电路。对于每一个轮廓，我们也找到了平面（相对于内部），这是我们的标签，这是一个子集的轮廓线的平面的交点。</p>
+
+<p>然后，我们应用二维布尔运算的交叉点和面多边形对应的一组的轮廓，布尔操作应用在相应的轮廓线的固体，计算产生的固体。在一般情况下，布尔运算可以计算任何2个固体，每一个平面是已知的，产生平面的固体，允许进一步的操作，以适用于派生固体。</p>
+
+<h4 id="section-5">计算形状交叉口</h4>
+
+<p>给定一个平面，用于每个轮廓。</p>
+
+<ol>
+  <li>
+    <p>找到集成电路，轮廓线和平面的交点。</p>
+  </li>
+  <li>
+    <p>我们发现平面的轮廓与平面的表面的交点。</p>
+  </li>
+  <li>
+    <p>找到完全是在这条线的轮廓部分。</p>
+  </li>
+</ol>
+
+<h4 id="section-6">进行布尔运算</h4>
+
+<p>在一个平面上的布尔运算，可以计算两固体A和B，还有其内部连线I和S，表面的多边形是已知的，以产生固体C，由其自身的内部和表面的多边形定义。</p>
+
+<p>最小化拉普拉斯变化幅度</p>
+
+<p>我们采取平滑如FiberMesh中的方法，并将其应用为一系列简单的平滑迭代。每次迭代更新顶点的位置如下：</p>
+
+<p><img src="/photo/week6/pic3.jpg" alt="pic3" /></p>
+
+<h3 id="section-7">心得</h3>
+
+<p>这周看的这边文章也是十分有趣，也是类似于模型构建的。这篇就是介绍采用二维图像转化为三维图形的。并且这篇文章的可贵之处在于它不仅做出来了这个方法，而且把用户接口和界面也实现出来了，使用鼠标的操作，将复杂的算法转化为便捷的可视化操作。</p>
+
+<p>而且这篇文章一个很大的冲击在于它只运用了两幅图像，就生成了三维的模型。这种思维上的转变带来的操作上的便捷，会是一种全新的设计体验。</p>
+
+  </article>
+
+  <nav class="pagination fn-clear" id="violet-paging">
+    <div class="pagination-list">
+      
+      <a class="prev" href="/essay/2015/08/22/Thinking-in-artisan-14.html" rel="bookmark"><i class="fa fa-chevron-circle-left"></i> 上一篇： 站在技术的角度思考</a>
+      
+      <br />
+      
+      <a class="next" href="/life/2015/08/25/note-for-life-18.html" rel="bookmark"><i class="fa fa-chevron-circle-right"></i> 下一篇： 实习生活小记</a>
+      
+    </div>
+  </nav>
+  
+  <!-- 多说评论框 start -->
+	  <div class="ds-thread" data-thread-key="16" data-title="2D草图三维化" data-url="/blog/2015/08/23/week6-20.html"></div>
+  <!-- 多说评论框 end -->
+
+</div>
+
+      </div>
+    </div>
+
+    <footer class="site-footer">
+  <div class="wrapper">
+    <center><a href="https://github.com/japhon">Japhon</a> &copy; 2014 - 2016 &bull; All rights reserved. <span class="footer-new-line"></span>Hosted by <a href="https://github.com">GitHub</a> and powered by <a href="http://jekyllrb.com">Jekyll</a>.</center>
+  </div>
+</footer>
+
+    <a href="#" class="toTop">
+      <i class="fa fa-chevron-up"></i>
+    </a>
+
+    <script type="text/javascript" src="/js/jquery-2.1.1.js"></script>
+
+<!-- 多说公共JS代码 start  -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"japhon"};
+(function() {
+	var ds = document.createElement('script');
+	ds.type = 'text/javascript';ds.async = true;
+	ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+	ds.charset = 'UTF-8';
+	(document.getElementsByTagName('head')[0] 
+		|| document.getElementsByTagName('body')[0]).appendChild(ds);
+})();
+</script>
+<!-- 多说公共JS代码 end -->
+
+<!-- 滚动屏幕 -->
+<script type="text/javascript"> 
+$(document).ready(function() { 
+	$('a.toTop').click(function() { 
+		$('html, body').animate({scrollTop:0}, 'slow'); 
+		return false; 
+	}); 
+	$(function(){
+		$(".tags_home a").click(function(){
+			$("html,body").animate({ scrollTop: $($(this).attr("href")).offset().top - 20 + "px"}, 'slow');
+		});
+	});
+}) 
+</script> 
+<!-- 滚动屏幕 end -->
+
+<!-- 百度统计代码 -->
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F9c8c2388ce86bd311f66f91366baaa3e' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<!-- 百度统计代码 end -->
+
+<!-- 手机显示菜单 -->
+<script type="text/javascript">
+$(function() {
+	$('#toggle-nav').hide();
+	$('#menu-btn').click(function() {
+		$('#toggle-nav').slideToggle();
+	});
+});
+</script>
+<!-- 手机显示菜单 end -->
+
+
+  </body>
+
+</html>

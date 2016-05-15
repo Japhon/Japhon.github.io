@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>模型在线修正</title>
+  <meta name="description" content="本系统支持模型的在线修正，而不需要重新处理或存储任何输入深度数据。即使在进行大型的三维模型的全局校正时，我们的方法只需要几分钟，而不是几小时来计算。我们的模型不需要任何明确的循环闭合（loop closures）去分析，最后，依靠单独的深度数据，允许在低照明条件下操作。">
+
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="canonical" href="http://japhon.github.io/blog/2015/08/02/week3-15.html">
+  <link rel="alternate" type="application/rss+xml" title="Japhon" href="http://japhon.github.io/feed.xml" />
+
+  <!-- user add -->
+  <!-- for icon -->
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+</head>
+
+
+  <body>
+
+    <header class="site-header">
+
+  <div class="wrapper">
+    
+    <a class="my-site-title page-link" href="/">
+      <i class="fa fa-th-large"></i>
+      Japhon
+    </a>
+    
+    <div class="menu-icon">
+      <a href="#" id="menu-btn">
+        <svg viewBox="0 0 18 15">
+          <path fill="#eee" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+          <path fill="#eee" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+          <path fill="#eee" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+        </svg>
+      </a>
+    </div>
+
+    <nav class="site-nav">
+      <div class="trigger">
+        
+          
+          <a class="page-link" href="/blog/">
+            
+              <i class="fa fa-pencil-square-o"></i>
+            
+            Blog
+          </a>
+          
+        
+          
+          <a class="page-link" href="/essay/">
+            
+              <i class="fa fa-book"></i>
+            
+            Essay
+          </a>
+          
+        
+          
+        
+          
+          <a class="page-link" href="/life/">
+            
+              <i class="fa fa-book"></i>
+            
+            Life
+          </a>
+          
+        
+          
+        
+          
+        
+          
+          <a class="page-link" href="/about/">
+            
+              <i class="fa fa-book"></i>
+            
+            About
+          </a>
+          
+        
+      </div>
+    </nav>
+
+  </div>
+
+  <!-- user update -->
+  <div id="toggle-nav">
+    <nav class="mobile-nav">
+      <ul class="mobile-nav-list">
+        <hr class="cut-off" />
+        
+          
+            <a class="mobile-page-link page-link" href="/blog/">
+              <li class="mobile-nav-item">
+                
+                  <i class="fa fa-pencil-square-o"></i>
+                
+                Blog
+              </li>
+            </a>            
+          
+        
+          
+            <a class="mobile-page-link page-link" href="/essay/">
+              <li class="mobile-nav-item">
+                
+                  <i class="fa fa-book"></i>
+                
+                Essay
+              </li>
+            </a>            
+          
+        
+          
+        
+          
+            <a class="mobile-page-link page-link" href="/life/">
+              <li class="mobile-nav-item">
+                
+                  <i class="fa fa-book"></i>
+                
+                Life
+              </li>
+            </a>            
+          
+        
+          
+        
+          
+        
+          
+            <a class="mobile-page-link page-link" href="/about/">
+              <li class="mobile-nav-item">
+                
+                  <i class="fa fa-book"></i>
+                
+                About
+              </li>
+            </a>            
+          
+        
+      </ul>
+    </nav>
+  </div>
+
+</header>
+
+
+    <div class="page-content">
+      <div class="content_wrapper">
+        <div class="post">
+
+  <header class="post-header">
+    <div class="post_header_blank"></div>
+    <h1 class="post-title">模型在线修正</h1>
+    <p class="post-meta">
+      Post by <a href="/about/">Japhon</a> 
+            at 2015-08-02 
+            with tags 
+            
+              <a href="/tags/#计算机图形学" rel="nofollow">
+                计算机图形学
+              </a>
+              , 
+            
+              <a href="/tags/#Kinect" rel="nofollow">
+                Kinect
+              </a>
+              
+              
+            
+    </p>
+  </header>
+
+  <div class="post_header_blank"></div>
+  <hr>
+  <div class="post_header_blank"></div>
+
+  <article class="post-content">
+    <h3 id="section">题目</h3>
+
+<p>Large-Scale and Drift-Free Surface Reconstruction Using Online Subvolume Registration</p>
+
+<h3 id="section-1">概述</h3>
+
+<p>本系统支持模型的在线修正，而不需要重新处理或存储任何输入深度数据。即使在进行大型的三维模型的全局校正时，我们的方法只需要几分钟，而不是几小时来计算。我们的模型不需要任何明确的循环闭合（loop closures）去分析，最后，依靠单独的深度数据，允许在低照明条件下操作。</p>
+
+<p><strong>解读：</strong></p>
+
+<p>现有的技术一般存在着以下（一个或多个）的弊端：</p>
+
+<ol>
+  <li>
+    <p>需要昂贵的离线全局优化步骤花费数小时来计算;</p>
+  </li>
+  <li>
+    <p>需要一个完整的二次传输的输入深度帧以校正累积误差;</p>
+  </li>
+  <li>
+    <p>依靠RGB数据以及深度数据来优化形态(pose);</p>
+  </li>
+  <li>
+    <p>要求用户创建显式循环闭合，以允许重大的对准误差得到解决。</p>
+  </li>
+</ol>
+
+<p>而本系统则为解决这些所有的问题，提出了一个新思路。</p>
+
+<h3 id="section-2">论文内容</h3>
+
+<h4 id="section-3">问题</h4>
+
+<p>首先，密集估计的符号距离函数需要限制适用性超越中等大小空间的GPU内存量。</p>
+
+<p>其次，大型探索序列（large exploratory sequences）必然导致轨迹估计，导致错位融合到测量全局TSDF模型漂移。这反过来，进一步恶化的跟踪过程</p>
+
+<h4 id="low-drift-local-modeling">低漂移本地建模（Low-drift Local Modeling）</h4>
+
+<p>为了克服上述问题，并能够扫描较大环境KinectFusion框架，采用在所述的活动量的方法的一个简单的变体——不固定大小的体积模型，而是融合TSDF测量到它被移到旁边的摄像头估计轨迹的有效体积。</p>
+
+<p>最初，将相机放置在活动卷的中心，并且当所估计的相机翻译不同于体积中心超过给定阈值，转移活动卷。出于效率的考虑，我们只允许像素级的变化，将环境的全局模型从局部TSDF集合中脱离出来（后文详述）。这个过程不可避免地打破了网络的最终重建，从而使我们能够不断跟踪传感器构成对局部空间的本地可靠的模型，使我们减少误差。</p>
+
+<p>虽然这个过程只能在轨道流水线（tracking pipeline）中，但它只取决于三维像素的值，所以可以实现实时操作。</p>
+
+<h4 id="subvolume-registration">子卷注册（Subvolume Registration）</h4>
+
+<p>我们通过全局优化子卷，构成了新的子卷，而非刚性变形是通过一种新的卷积混合解决。值得注意的是要指出，不需要由照相机跟踪模块，因此可保持操作的实时和推动新的子卷（Subvolume）到共享缓冲器允许姿势优化，从而来运行并行处理优化的结果。</p>
+
+<h4 id="icp">ICP方法：</h4>
+
+<ol>
+  <li>
+    <p>提取子卷的零水平集（zero-level set），以便获得一组点及法线;</p>
+  </li>
+  <li>
+    <p>我们考虑子卷的边界，并找到有重叠边界的其他子卷</p>
+  </li>
+  <li>
+    <p>对于子卷的每一个点，我们寻找子卷距离函数的梯度对应关系</p>
+  </li>
+  <li>
+    <p>每个有效对应，引入了一个点到面距离约束来优化问题;</p>
+  </li>
+  <li>
+    <p>若姿态在约束中，至少加入一个姿态到姿态（pose-to-pose）的误差项，以确保全局一致性;</p>
+  </li>
+</ol>
+
+<h4 id="section-4">混合卷</h4>
+
+<p>在子卷的不同的数据源生成的距离函数，零水平集会有稍微不同的位置，主要是由于有限的噪声卷积通过仅退K集成滤波实现的。因此，多张重叠的表面和工件，如可能会出现非刚性变形。为了解决这个问题，在整个覆盖所有的子卷的空间延伸的全局卷FG的估计。</p>
+
+<p>但是，重采样子卷到一个新的全局卷需要遍历整个集合。这可以仅通过查询每个子卷发现。此外，全球卷的大小，直接取决于所述相机路径，从而使广泛的探索可能产生大量的空体（null voxels）。因此，计算时间更多地由子卷决定，而不是由它们的数量和范围的相对位置。</p>
+
+<p>关于计算时间，一方面，如果该子体积不重叠，所需要的时间是零。另一方面，如果所有的子卷被重叠时，复杂性将是二次子卷数目。然而，我们通过实验发现，计算时间强烈地受到体素的总数，而不是重叠的量支配，所以，混合卷的方法比全局卷重采样的十倍还更快。</p>
+
+<p>（作者注：混合卷只是为了提高网格表面重建，没有这个步骤的话，相机和子卷映射也都可以工作。）</p>
+
+<h3 id="section-5">其他</h3>
+
+<p>这周和老师申请了实验室的Kinect，然后几经周折，终于和泽宇师兄拿到了设备。自己现在宿舍把环境搭建了起来。</p>
+
+<p>首先需要下载官方的环境确认软件，确定当前电脑的环境是不是适合使用Kinect。按照上面的指引，连接了设备并运行了软件，得到解决是可以运行。但是USB控制器不确定是不是可以使用。不过因为我确定我的电脑是有USB3.0的，所以可以先忽略这个问题。</p>
+
+<p><img src="/photo/week3/pic1.jpg" alt="week3-1" /></p>
+
+<p>确认了环境之后，按照微软的官网的教程，下载了Mircrosoft Kinect Studio。打开并连接了设备之后，可以看到正常运行的Kinect摄像头拍摄的深度影像，以及它自身的深度探测和骨骼识别出来的效果。</p>
+
+<p><img src="/photo/week3/pic2.jpg" alt="week3-2" /></p>
+
+<p>确认可以使用之后，为了更好地了解，我先打开SDK Brower，看看里面有什么可以用的资源。在里面看到了一些微软自带的演示程序，所以我下载了试一下。运行了一下，了解它到底是怎么操作的。代码还没怎么看懂，还在慢慢研究。</p>
+
+<p><img src="/photo/week3/pic3.jpg" alt="week3-3" /></p>
+
+<h3 id="section-6">心得</h3>
+
+<p>这周本来想利用周末好好来研究一下Kinect的API是怎么使用的，但是周末刚好有家乡的亲戚过来看我，所以原计划也就泡汤了。不过也总算是配置好了Kinect的环境并且确定了自己可以用。</p>
+
+<p>Sample的代码还是有稍微看一下的，毕竟没有很明白，不知道应该写成什么所得，所以干脆等到下个星期再研究看多一点的sample看看有没有什么收获。</p>
+
+  </article>
+
+  <nav class="pagination fn-clear" id="violet-paging">
+    <div class="pagination-list">
+      
+      <a class="prev" href="/blog/2015/07/26/week2-12.html" rel="bookmark"><i class="fa fa-chevron-circle-left"></i> 上一篇： 脸部3D模型重建</a>
+      
+      <br />
+      
+      <a class="next" href="/blog/2015/08/10/week4-16.html" rel="bookmark"><i class="fa fa-chevron-circle-right"></i> 下一篇： 容量法建模</a>
+      
+    </div>
+  </nav>
+  
+  <!-- 多说评论框 start -->
+	  <div class="ds-thread" data-thread-key="13" data-title="模型在线修正" data-url="/blog/2015/08/02/week3-15.html"></div>
+  <!-- 多说评论框 end -->
+
+</div>
+
+      </div>
+    </div>
+
+    <footer class="site-footer">
+  <div class="wrapper">
+    <center><a href="https://github.com/japhon">Japhon</a> &copy; 2014 - 2016 &bull; All rights reserved. <span class="footer-new-line"></span>Hosted by <a href="https://github.com">GitHub</a> and powered by <a href="http://jekyllrb.com">Jekyll</a>.</center>
+  </div>
+</footer>
+
+    <a href="#" class="toTop">
+      <i class="fa fa-chevron-up"></i>
+    </a>
+
+    <script type="text/javascript" src="/js/jquery-2.1.1.js"></script>
+
+<!-- 多说公共JS代码 start  -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"japhon"};
+(function() {
+	var ds = document.createElement('script');
+	ds.type = 'text/javascript';ds.async = true;
+	ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+	ds.charset = 'UTF-8';
+	(document.getElementsByTagName('head')[0] 
+		|| document.getElementsByTagName('body')[0]).appendChild(ds);
+})();
+</script>
+<!-- 多说公共JS代码 end -->
+
+<!-- 滚动屏幕 -->
+<script type="text/javascript"> 
+$(document).ready(function() { 
+	$('a.toTop').click(function() { 
+		$('html, body').animate({scrollTop:0}, 'slow'); 
+		return false; 
+	}); 
+	$(function(){
+		$(".tags_home a").click(function(){
+			$("html,body").animate({ scrollTop: $($(this).attr("href")).offset().top - 20 + "px"}, 'slow');
+		});
+	});
+}) 
+</script> 
+<!-- 滚动屏幕 end -->
+
+<!-- 百度统计代码 -->
+<script type="text/javascript">
+var _bdhmProtocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+document.write(unescape("%3Cscript src='" + _bdhmProtocol + "hm.baidu.com/h.js%3F9c8c2388ce86bd311f66f91366baaa3e' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<!-- 百度统计代码 end -->
+
+<!-- 手机显示菜单 -->
+<script type="text/javascript">
+$(function() {
+	$('#toggle-nav').hide();
+	$('#menu-btn').click(function() {
+		$('#toggle-nav').slideToggle();
+	});
+});
+</script>
+<!-- 手机显示菜单 end -->
+
+
+  </body>
+
+</html>
