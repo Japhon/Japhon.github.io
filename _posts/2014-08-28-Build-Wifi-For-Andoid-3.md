@@ -2,7 +2,7 @@
 layout: post
 title: Ubuntu开Wifi给Android手机用
 date:   2014-08-28 15:12:55
-categories: Blog
+categories: blog
 dsid: 0003
 tags: ["Ubuntu", "Android"]
 abstract: 之前在使用Ubuntu的时候总是有一个问题，就是我开的Wifi（参照网上参考的教程）我自己的Android手机没办法用，但是舍友的苹果手机就可以用。但是我自己的Android手机却不能用了。google了一下，发现Android的手机是不支持Ad-hoc架构的。下面就来解决这个问题。
