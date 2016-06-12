@@ -14,13 +14,13 @@ abstract: 之前在使用Ubuntu的时候总是有一个问题，就是我开的W
 
 注意：你的电脑的无线网卡必须支持Access Point (AP) mode，如果不支持的话一切都白搭。下面默认你是支持的，如果不支持的话请寻找有没有其他的解决方法。
 
-####<b>第1步</b>
+#### <b>第1步</b>
 
 点击下载安装
 
 请点这里→[kde-nm-connection-editor](apt://plasma-nm).
 
-####<b>第2步</b>
+#### <b>第2步</b>
 
 在终端中输入
 
@@ -30,25 +30,25 @@ abstract: 之前在使用Ubuntu的时候总是有一个问题，就是我开的W
 
 ![kde-connect-manager](/photo/Build-Wifi-For-Andoid/kde-connect-manager.png)
 
-####<b>第3步</b>
+#### <b>第3步</b>
 
 点击“添加”（Add）按钮，然后选择“Wireless (shared)”
 
 ![create-wireless-point](/photo/Build-Wifi-For-Andoid/create-wireless-point.png)
 
-####<b>第4步</b>
+#### <b>第4步</b>
 
 输入“链接名”（connection name）和 “ssid”, 然后“模式”（mode）选择“Access Point”。 然后可以在“Wireless Security”这个选项卡中设置你的密码（可选）。最后点击“OK”.完成设置。
 
 ![create-wireless-point1](/photo/Build-Wifi-For-Andoid/create-wireless-point1.png)
 
-####<b>第5步</b>
+#### <b>第5步</b>
 
 在已经有线连接上网的情况下，点击“链接到隐藏的Wi-Fi网络” （Connect to Hidden Wi-Fi network）， 选择你之前设置的“链接名”。
 
 ![connect-to-wireless](/photo/Build-Wifi-For-Andoid/connect-to-wireless.png)
 
-####<b>第6步</b>
+#### <b>第6步</b>
 
 最后，你的链接菜单应该就像下图这样。
 
