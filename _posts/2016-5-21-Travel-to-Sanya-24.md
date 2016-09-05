@@ -29,85 +29,153 @@ abstract: 这次旅行是班级组织的三亚毕业游，共6天。人均花费
 
 下午从学校出发，拉着大大小小的行李，前往白云机场，出发。在飞机上解决了晚餐，顺利抵达三亚。
 
-![YN](/photo/Travel-to-Yunnan/IMG_7814.jpg)
+![SY](/photo/Travel-to-Sanya/IMG_7814.jpg)
 
 总共15个人，之前定了四间两房两厅的公寓，老板很好人，说可以来机场接我们。离机场不会很远，十几分钟我们就到了，经过简单的手续，住进了预定好的酒店。
 
-![YN](/photo/Travel-to-Yunnan/IMG_7813.jpg)
+![SY](/photo/Travel-to-Sanya/IMG_7813.jpg)
 
 公寓的条件比想象的要好很多，超大的海景阳台，配套非常齐全，厨房，冰箱，洗衣机，应有尽有，非常赞，价格也很公道的。其实是在一个算是比较高档的小区里面，小区中还提供免费的游泳池，后面会说到。先来看看这房间的条件，真的超赞。
 
-![YN](/photo/Travel-to-Yunnan/IMG_7815.jpg)
+![SY](/photo/Travel-to-Sanya/IMG_7815.jpg)
 
 简单地休整完，我们就跑出来找吃的。这里周围蛮安静的，不过多走几步就看到了很多食档，灯火通明。随便找了一家坐下，因为天气比较热，买了老板推荐的清补凉。哇塞，浓浓的椰汁，料非常足，出乎意料的棒！
 
-![YN](/photo/Travel-to-Yunnan/IMG_7811.jpg)
+![SY](/photo/Travel-to-Sanya/IMG_7811.jpg)
 
 肚子有点饿了，点一晚抱罗粉，也挺好吃的。
 
-![YN](/photo/Travel-to-Yunnan/IMG_7812.jpg)
+![SY](/photo/Travel-to-Sanya/IMG_7812.jpg)
 
 吃完就心满意足地回公寓了。两间房，其中一间是标准的大床房，另外一件事榻榻米，天气比较热，我挑了间榻榻米的，真宽敞，整个人可以睡成横的哈哈哈。
 
-![YN](/photo/Travel-to-Yunnan/IMG_7816.jpg)
+![SY](/photo/Travel-to-Sanya/IMG_7816.jpg)
 
 ### <a name="d2">第二天：大小洞天-天涯海角</a>
 
 作为一群老司机，真是悠闲到爆炸，出来旅游都要睡到自然醒，所以醒来直接准备吃午餐了哈哈。在海边找了一家餐厅，发现已经搬走了，又找了一家，发现太贵了，最后才确定一家，比较接近东北菜，谁叫海南那么多东北人呢！味道算是一般般吧，不过大家都说第一顿不用吃太好，后面太能有点期待，哈哈哈。
 
-![YN](/photo/Travel-to-Yunnan/IMG_1739.jpg)
+![SY](/photo/Travel-to-Sanya/IMG_1739.jpg)
 
 吃完饭，做公交车前往大小洞天。睡到自然醒的大家一上车又开始睡了哈哈哈哈。
 
-![YN](/photo/Travel-to-Yunnan/IMG_7821.jpg)
+![SY](/photo/Travel-to-Sanya/IMG_7821.jpg)
 
 终于到了，门票好像还蛮贵的，不过进入景区，马上一种海南的感觉扑面而来。有种“这才是真正的海南”的感觉。风景挺不错的。
 
-![YN](/photo/Travel-to-Yunnan/IMG_7825.jpg)
+![SY](/photo/Travel-to-Sanya/IMG_7825.jpg)
 
 太阳很大，不过两旁树荫很多，老司机们理所当然地纷纷钻到树荫里了。
 
-![YN](/photo/Travel-to-Yunnan/IMG_7832.jpg)
+![SY](/photo/Travel-to-Sanya/IMG_7832.jpg)
 
 偶尔走马观花
 
-![YN](/photo/Travel-to-Yunnan/IMG_7827.jpg)
+![SY](/photo/Travel-to-Sanya/IMG_7827.jpg)
 
 偶尔基情满满
 
-![YN](/photo/Travel-to-Yunnan/IMG_7829.jpg)
+![SY](/photo/Travel-to-Sanya/IMG_7829.jpg)
 
 偶尔……（马赛克）哈哈哈哈
 
-![YN](/photo/Travel-to-Yunnan/IMG_7836.jpg)
+![SY](/photo/Travel-to-Sanya/IMG_7836.jpg)
 
 沿途都是椰子树，还有碰到有人在上面直接摘下来卖给游客吃。直接在树上斩椰子还是第一次见，不敢走近他，怕被砸到，拍一下他的成果。
 
-![YN](/photo/Travel-to-Yunnan/IMG_7835.jpg)
+![SY](/photo/Travel-to-Sanya/IMG_7835.jpg)
 
 这里的海边更多的是石头，和沙滩完全是不同的风格，各种大块的石头堆砌在一起，美极了！难怪时不时就有穿着婚纱的人在这里拍照，真的很美！
 
-![YN](/photo/Travel-to-Yunnan/IMG_7842.jpg)
+![SY](/photo/Travel-to-Sanya/IMG_7842.jpg)
 
 石头的颜色非常深，同伴说是被太阳晒黑了，笑死了哈哈
 
-![YN](/photo/Travel-to-Yunnan/IMG_7843.jpg)
+![SY](/photo/Travel-to-Sanya/IMG_7843.jpg)
 
 终于到了标志性的小洞天的石头，装个逼自拍一个
 
-![YN](/photo/Travel-to-Yunnan/IMG_7911.jpg)
+![SY](/photo/Travel-to-Sanya/IMG_7911.jpg)
 
 看到半山腰的石雕，一开始还以为出现了幻觉，脑子瓦塌了。好像是很严肃的神灵造型，但不知为何总觉得好好笑。
 
-![YN](/photo/Travel-to-Yunnan/IMG_7924.jpg)
+![SY](/photo/Travel-to-Sanya/IMG_7924.jpg)
 
 这条不知名的路，非常有感觉
 
-![YN](/photo/Travel-to-Yunnan/IMG_7925.jpg)
+![SY](/photo/Travel-to-Sanya/IMG_7925.jpg)
 
+回程我们还是决定走路回去，有些小伙伴走累了，就会坐景区的这种小电瓶车。感觉也是蛮爽的。
 
+![SY](/photo/Travel-to-Sanya/IMG_7928.jpg)
+
+这条路的感觉真的太棒了，忍不出臭美了一番，让同学帮忙拍张装逼照
+
+![SY](/photo/Travel-to-Sanya/IMG_7932.jpg)
+
+接近门口的地方，发现有卖一种椰子，是黄色的，不知道是什么品种，虽然知道景区的东西肯定会比较贵，但是还是忍不住买了一个尝尝。喝里面的椰水的时候还没有特别的感觉，只是觉得有点清甜，比普通的椰子要甜一些。后来掰了一块椰子肉，惊呆了。居然是偏软的口感，特别香特别好吃！
+
+![SY](/photo/Travel-to-Sanya/IMG_0692.jpg)
+
+出了景区门，突然发现三亚的车牌居然是“琼B”，哈哈哈哈，莫名的喜感（三亚的朋友别打我~）
+
+![SY](/photo/Travel-to-Sanya/IMG_7930.jpg)
+
+于是我们乘坐公交车前往下一个景点，整辆公交车像是被我们包下来了一样，也是蛮爽的，一群大老爷们开始在公交车上臭美起来。
+
+![SY](/photo/Travel-to-Sanya/IMG_1793.jpg)
+
+下一站，天涯海角
+
+![SY](/photo/Travel-to-Sanya/IMG_7940.jpg)
+
+有一句话说得好，来了三亚，如果不去天涯海角，你可能会后悔。但是如果去了天涯海角，那么你一定会后悔。结果我们居然真的就来体验一下到底有多坑。买了算是不便宜的门票进来，走了长长的一段路，终于来到了写着天涯和海角的两块大石头这里了。
+
+![SY](/photo/Travel-to-Sanya/IMG_7944.jpg)
+
+当然，如果不是已经知道上面是海角两个字的话，我估计大部分人看不出来这块就是海角吧。
+
+![SY](/photo/Travel-to-Sanya/IMG_7945.jpg)
+
+好了，告诉你有多坑，就是这么坑，除了这两块大石头，四个字还硬生生是人为刻上去的，其他的就没有什么了。不过抱着度假的心态，兄弟们认为在天涯海角拥抱的人，可以一生一世在一起，于是……
+
+![SY](/photo/Travel-to-Sanya/IMG_7962.jpg)
+
+啊！辣眼睛！
+
+![SY](/photo/Travel-to-Sanya/IMG_7970.jpg)
+
+当然也有正常一点的，老人与海
+
+![SY](/photo/Travel-to-Sanya/IMG_7950.jpg)
+
+当然，等到太阳快落山的时候，黄昏沙滩，自带滤镜效果的美景，还是非常赏心悦目的。
+
+![SY](/photo/Travel-to-Sanya/IMG_7964.jpg)
+
+因为明天就即将前往加井岛，需要特别早起，所以晚上就没有活动了，也和大家讲清楚了一定要早起别太晚睡，于是度过了一个平静的夜晚。
 
 ### <a name="d3">第三天：加井岛</a>
+
+一大早就起来坐车，实在是困得不行，大家一上车就倒头就睡。
+
+![SY](/photo/Travel-to-Sanya/IMG_7971.jpg)
+
+结果该死的司机说大家不能睡，睡了他自己也困，要大家一起起来嗨！于是放着特别大声那种路边摊的洗脑DJ，喇叭就在我的腿旁边，声音大得都能感觉到了一阵风追动了我的脚毛。
+
+![SY](/photo/Travel-to-Sanya/IMG_7972.jpg)
+
+加井岛其实是一个无人岛，而且是没有开发的，所以我们是参加了那种户外的俱乐部来到这里的。很多东西都需要自助的，例如说，我们还帮忙在岸边把船推下海。弄得裤子湿了一大片。
+
+![SY](/photo/Travel-to-Sanya/IMG_7973.jpg)
+
+不过坐在船上一路狂奔，吹着海风，还是挺爽的。
+
+![SY](/photo/Travel-to-Sanya/IMG_7975.jpg)
+
+终于登上加井岛，等上岸回头的一刹那我惊呆了。
+
+
 ### <a name="d4">第四天：呀诺达</a>
 ### <a name="d5">第五天：亚龙湾</a>
 ### <a name="d6">第六天：返程</a>
