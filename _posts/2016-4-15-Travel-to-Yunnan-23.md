@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 云南四川贵州之旅
-date: 2016-05-14
+date: 2016-04-15
 categories: life
 dsid: 0023
 tags: ["游记"]
