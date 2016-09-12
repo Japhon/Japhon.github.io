@@ -17,11 +17,8 @@ permalink: /about/
 
 ### Introduction 简介
 
-A senior student in Sun Yat-sen University in Guangzhou, China.<br>
-<span class="about_zh">来自广州中山大学的一名大四学生</span>
-
-Major in software engineering, digital media orientation<br>
-<span class="about_zh">软件工程专业，数字媒体方向</span>
+Graduate from Sun Yat-sen University in Guangzhou, China.<br>
+<span class="about_zh">毕业于广州中山大学</span>
 
 A badminton aficionado have participated in the Universiade.<br>
 <span class="about_zh">一位羽毛球爱好者，参加过大运会</span>
@@ -63,13 +60,13 @@ If you like this blog, you can support me by the following ways.<br>
 	<center>
 		<div class="contain">
 			<div class="zhifucode">	
-				<img  src="/photo/alibaba.jpg"></img>
+				<img  src="/photo/alibaba.jpg"/>
 				<p>支付宝扫一扫捐赠</p>
 			</div>
 		</div>
 		<div class="contain">
 			<div class="zhifucode">
-				<img src="/photo/weixinzhifu.jpg"></img>
+				<img src="/photo/weixinzhifu.jpg"/>
 				<p>微信扫一扫捐赠</p>
 			</div>
 		</div>
