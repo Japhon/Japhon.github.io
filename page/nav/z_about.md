@@ -32,16 +32,6 @@ A music fancier, piano player with level-10 certificate.<br>
 
 <div class="post_header_blank"></div>
 
-### Illustrate 说明
-
-
-
-<div class="post_header_blank"></div>
-
----
-
-<div class="post_header_blank"></div>
-
 ### Contacts 联系
 
 The source is post on <a href="https://github.com/Japhon">**Github**</a>, 
