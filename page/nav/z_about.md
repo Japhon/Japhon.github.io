@@ -7,7 +7,7 @@ permalink: /about/
 
 <div class="post_header_blank"></div>
 
-## <center> Japhon Zhuang <br> 庄泽帆 <center>
+## <center> Japhon <center>
 
 <div class="post_header_blank"></div>
 
@@ -42,25 +42,3 @@ and you can contact me on <a href="http://weibo.com/zhuangzefan">**Weibo**</a>,
  	博客的代码放在<a href="https://github.com/Japhon">**Github**</a>上，你可以在<a href="http://weibo.com/zhuangzefan">**新浪微博**</a>，
  	<a href="http://www.zhihu.com/people/zhuang-japhon">**知乎**</a>上联系我，或者发<a href="mailto:zhuangzefan@foxmail">**电子邮件**</a>给我。
  </span>
-
-If you like this blog, you can support me by the following ways.<br>
-<span class="about_zh">如果你喜欢这个博客，可以通过以下方式赞助我。</span>
-
-<div>
-	<center>
-		<div class="contain">
-			<div class="zhifucode">	
-				<img  src="/photo/alibaba.jpg"/>
-				<p>支付宝扫一扫捐赠</p>
-			</div>
-		</div>
-		<div class="contain">
-			<div class="zhifucode">
-				<img src="/photo/weixinzhifu.jpg"/>
-				<p>微信扫一扫捐赠</p>
-			</div>
-		</div>
-	</center>
-</div>
-
-<div class="post_header_blank"></div>
