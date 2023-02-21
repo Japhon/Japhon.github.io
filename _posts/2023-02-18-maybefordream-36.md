@@ -1,9 +1,9 @@
 ---
 layout: post
 title: 和林师兄聊天的一些记录
-date: 2023-02-08
+date: 2023-02-18
 categories: essay
-dsid: 0037
+dsid: 0036
 tags: ["创业"]
 abstract: 有时候成功的可能性比自己小特别多，在自己测算的逻辑里永远都是赚钱的，但是很多不利因素却是完全超乎预料的
 
