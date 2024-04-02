@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 聊一聊最近心态上的一些变化
+title: 我怎么看待买车这件事
 date: 2024-04-01
 categories: life
 dsid: 0041
