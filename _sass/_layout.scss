@@ -264,10 +264,18 @@
     }
 
     h4 {
+        font-size: 22px;
+
+        @include media-query($on-laptop) {
+            font-size: 20px;
+        }
+    }
+
+    h5 {
         font-size: 20px;
 
         @include media-query($on-laptop) {
-            font-size: 18px;
+            font-size: 19px;
         }
     }
 }
