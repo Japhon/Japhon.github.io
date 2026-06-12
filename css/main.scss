@@ -7,13 +7,17 @@
 
 // Our variables
 //  $base-font-family: Helvetica, Arial, sans-serif;
-$base-font-family: Arial,'Times New Roman','Microsoft YaHei',SimHei; 
+$base-font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', 'Noto Sans SC', Roboto, Arial, sans-serif;
 $base-font-size:   18px;
 $small-font-size:  $base-font-size * 0.9;
 $big-font-size:    $base-font-size * 1.1;
 $mbig-font-size:   $base-font-size * 1.2;
 $lbig-font-size:   $base-font-size * 1.3;
-$base-line-height: 1.5;
+$base-line-height: 1.75;
+
+// 主题色（薄荷绿，现代清新）
+$accent-color:       #1d9e75;
+$accent-color-dark:  #0f6e56;
 
 $spacing-unit:     30px;
 

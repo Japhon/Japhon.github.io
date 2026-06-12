@@ -24,6 +24,8 @@ layout: default
   <hr>
   <div class="post_header_blank"></div>
 
+  {% include toc.html %}
+
   <article class="post-content">
     {{ content }}
   </article>
@@ -40,8 +42,7 @@ layout: default
     </div>
   </nav>
   
-  <!-- 多说评论框 start -->
-	  <div class="ds-thread" data-thread-key="{{ page.dsid }}" data-title="{{ page.title }}" data-url="{{ page.url }}"></div>
-  <!-- 多说评论框 end -->
+  <!-- 评论：Giscus -->
+  {% include giscus.html %}
 
 </div>

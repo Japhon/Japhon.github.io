@@ -1,33 +1,19 @@
 <script type="text/javascript" src="/js/jquery-2.1.1.js"></script>
 
-<!-- 多说公共JS代码 start  -->
-<script type="text/javascript">
-var duoshuoQuery = {short_name:"{{ site.duoshuo }}"};
-(function() {
-	var ds = document.createElement('script');
-	ds.type = 'text/javascript';ds.async = true;
-	ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-	ds.charset = 'UTF-8';
-	(document.getElementsByTagName('head')[0] 
-		|| document.getElementsByTagName('body')[0]).appendChild(ds);
-})();
-</script>
-<!-- 多说公共JS代码 end -->
-
 <!-- 滚动屏幕 -->
-<script type="text/javascript"> 
-$(document).ready(function() { 
-	$('a.toTop').click(function() { 
-		$('html, body').animate({scrollTop:0}, 'slow'); 
-		return false; 
-	}); 
+<script type="text/javascript">
+$(document).ready(function() {
+	$('a.toTop').click(function() {
+		$('html, body').animate({scrollTop:0}, 'slow');
+		return false;
+	});
 	$(function(){
 		$(".tags_home a").click(function(){
 			$("html,body").animate({ scrollTop: $($(this).attr("href")).offset().top - 20 + "px"}, 'slow');
 		});
 	});
-}) 
-</script> 
+})
+</script>
 <!-- 滚动屏幕 end -->
 
 <!-- 百度统计代码 -->
@@ -47,3 +33,66 @@ $(function() {
 });
 </script>
 <!-- 手机显示菜单 end -->
+
+<!-- 暗色模式切换 -->
+<script type="text/javascript">
+(function () {
+	function applyToggleIcon(btn) {
+		var isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+		btn.innerHTML = isDark ? '<i class="fa fa-sun-o"></i>' : '<i class="fa fa-moon-o"></i>';
+	}
+	document.addEventListener('DOMContentLoaded', function () {
+		var btn = document.createElement('button');
+		btn.className = 'theme-toggle';
+		btn.setAttribute('aria-label', '切换深浅色');
+		document.body.appendChild(btn);
+		applyToggleIcon(btn);
+		btn.addEventListener('click', function () {
+			var isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+			if (isDark) {
+				document.documentElement.removeAttribute('data-theme');
+				try { localStorage.setItem('theme', 'light'); } catch (e) {}
+			} else {
+				document.documentElement.setAttribute('data-theme', 'dark');
+				try { localStorage.setItem('theme', 'dark'); } catch (e) {}
+			}
+			applyToggleIcon(btn);
+		});
+	});
+})();
+</script>
+<!-- 暗色模式切换 end -->
+
+<!-- 阅读进度条（仅文章页） -->
+<script type="text/javascript">
+(function () {
+	if (!document.querySelector('.post-content')) return;
+	document.addEventListener('DOMContentLoaded', function () {
+		var bar = document.createElement('div');
+		bar.className = 'reading-progress';
+		document.body.appendChild(bar);
+		function update() {
+			var h = document.documentElement;
+			var scrolled = h.scrollTop || document.body.scrollTop;
+			var height = h.scrollHeight - h.clientHeight;
+			var pct = height > 0 ? (scrolled / height) * 100 : 0;
+			bar.style.width = pct + '%';
+		}
+		window.addEventListener('scroll', update);
+		window.addEventListener('resize', update);
+		update();
+	});
+})();
+</script>
+<!-- 阅读进度条 end -->
+
+<!-- 文章图片懒加载 -->
+<script type="text/javascript">
+document.addEventListener('DOMContentLoaded', function () {
+	var imgs = document.querySelectorAll('.post-content img');
+	for (var i = 0; i < imgs.length; i++) {
+		imgs[i].setAttribute('loading', 'lazy');
+	}
+});
+</script>
+<!-- 文章图片懒加载 end -->

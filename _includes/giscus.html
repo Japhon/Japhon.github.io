@@ -1,0 +1,53 @@
+<!--
+  Giscus 评论（基于 GitHub Discussions）
+  =====================================================================
+  ⚠️ 占位配置：请按以下步骤拿到参数后，替换下方 data-repo / data-repo-id /
+     data-category / data-category-id 四个值，评论即可生效。
+
+  步骤：
+  1. 打开仓库 Settings → General → Features，勾选 Discussions 开启讨论区。
+  2. 安装 giscus app：https://github.com/apps/giscus ，授权给本仓库。
+  3. 打开 https://giscus.app/zh-CN ，在「仓库」填 Japhon/Japhon.github.io，
+     页面会自动算出 repo-id 和 category-id。
+  4. 「页面 ↔ discussion 映射」选 pathname；「Discussion 分类」选 Announcements。
+  5. 把生成的 <script> 里的 data-repo-id、data-category、data-category-id
+     复制到下面对应位置即可。
+  =====================================================================
+-->
+<div class="giscus-wrapper">
+  <script src="https://giscus.app/client.js"
+        data-repo="Japhon/Japhon.github.io"
+        data-repo-id="PLACEHOLDER_REPO_ID"
+        data-category="Announcements"
+        data-category-id="PLACEHOLDER_CATEGORY_ID"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="top"
+        data-theme="preferred_color_scheme"
+        data-lang="zh-CN"
+        data-loading="lazy"
+        crossorigin="anonymous"
+        async>
+  </script>
+</div>
+
+<!-- 让 Giscus 主题跟随站点暗色模式切换 -->
+<script>
+(function () {
+  function giscusTheme() {
+    return document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+  }
+  function sendTheme() {
+    var iframe = document.querySelector('iframe.giscus-frame');
+    if (!iframe) return;
+    iframe.contentWindow.postMessage(
+      { giscus: { setConfig: { theme: giscusTheme() } } },
+      'https://giscus.app'
+    );
+  }
+  var observer = new MutationObserver(sendTheme);
+  observer.observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
+})();
+</script>

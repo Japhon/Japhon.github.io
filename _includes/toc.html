@@ -1,0 +1,36 @@
+<!-- 文章目录 TOC（纯前端生成，桌面端右侧浮动，移动端隐藏） -->
+<nav class="post-toc" id="post-toc" aria-label="文章目录"></nav>
+<script>
+(function () {
+  document.addEventListener('DOMContentLoaded', function () {
+    var content = document.querySelector('.post-content');
+    var toc = document.getElementById('post-toc');
+    if (!content || !toc) return;
+    var heads = content.querySelectorAll('h2, h3');
+    if (heads.length < 2) { toc.style.display = 'none'; return; }
+
+    var html = '<div class="post-toc-title">目录</div><ul class="post-toc-list">';
+    for (var i = 0; i < heads.length; i++) {
+      var h = heads[i];
+      if (!h.id) {
+        h.id = 'toc-' + i + '-' + (h.textContent || '').trim().replace(/\s+/g, '-').slice(0, 30);
+      }
+      var lvl = h.tagName.toLowerCase() === 'h3' ? ' toc-sub' : '';
+      html += '<li class="toc-item' + lvl + '"><a href="#' + h.id + '">' + (h.textContent || '') + '</a></li>';
+    }
+    html += '</ul>';
+    toc.innerHTML = html;
+
+    var links = toc.querySelectorAll('a');
+    for (var j = 0; j < links.length; j++) {
+      links[j].addEventListener('click', function (e) {
+        e.preventDefault();
+        var target = document.getElementById(this.getAttribute('href').slice(1));
+        if (target) {
+          window.scrollTo({ top: target.getBoundingClientRect().top + window.pageYOffset - 70, behavior: 'smooth' });
+        }
+      });
+    }
+  });
+})();
+</script>

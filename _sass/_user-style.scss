@@ -188,3 +188,203 @@ a.toTop:hover {
     width: 100%;
   }
 }
+
+/* =====================================================================
+   现代清新美化（薄荷绿主题 + 暗色模式）—— 2026 update
+   ===================================================================== */
+
+/* --- 主题色 CSS 变量（支持暗色切换） --- */
+:root {
+  --accent: #{$accent-color};
+  --accent-dark: #{$accent-color-dark};
+  --bg: #fafafa;
+  --bg-card: #ffffff;
+  --text: #333333;
+  --text-muted: #888888;
+  --border: #ececec;
+  --code-bg: #f6f8fa;
+  --quote-bg: #f4faf7;
+  --shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+html[data-theme="dark"] {
+  --bg: #1a1a1a;
+  --bg-card: #242424;
+  --text: #d4d4d4;
+  --text-muted: #999999;
+  --border: #333333;
+  --code-bg: #2b2b2b;
+  --quote-bg: #1f2b27;
+  --shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  transition: background-color .3s ease, color .3s ease;
+  letter-spacing: .01em;
+}
+
+/* 正文段落更舒展 */
+.post-content {
+  p { margin-bottom: 1.2em; }
+
+  /* 标题层级清晰 */
+  h2 {
+    margin-top: 1.8em;
+    margin-bottom: .6em;
+    padding-bottom: .3em;
+    border-bottom: 2px solid var(--border);
+    font-weight: 600;
+  }
+  h3 {
+    margin-top: 1.4em;
+    margin-bottom: .5em;
+    font-weight: 600;
+  }
+
+  /* 链接：主题色 + hover 下划线 */
+  a {
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color .2s ease, color .2s ease;
+    &:hover {
+      color: var(--accent-dark);
+      border-bottom-color: var(--accent);
+    }
+  }
+
+  /* 引用块：左侧主题色竖条 */
+  blockquote {
+    border-left: 4px solid var(--accent);
+    background: var(--quote-bg);
+    margin: 1.5em 0;
+    padding: .8em 1.2em;
+    border-radius: 0 8px 8px 0;
+    color: var(--text-muted);
+    font-style: italic;
+    > :last-child { margin-bottom: 0; }
+  }
+
+  /* 行内 code */
+  code {
+    background: var(--code-bg);
+    padding: .15em .4em;
+    border-radius: 4px;
+    font-size: .88em;
+  }
+
+  /* 代码块 */
+  pre {
+    background: var(--code-bg);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 1em 1.2em;
+    overflow-x: auto;
+    line-height: 1.5;
+    code {
+      background: none;
+      padding: 0;
+    }
+  }
+
+  /* 文章图片：圆角 + 轻阴影 + 居中 */
+  img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 1.5em auto;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+  }
+
+  /* 列表间距 */
+  ul, ol { margin-bottom: 1.2em; }
+  li { margin-bottom: .4em; }
+}
+
+/* --- 暗色切换按钮 --- */
+.theme-toggle {
+  position: fixed;
+  bottom: 55px;
+  right: 5px;
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 8px;
+  background: var(--bg-card);
+  color: var(--accent);
+  box-shadow: var(--shadow);
+  cursor: pointer;
+  font-size: 18px;
+  z-index: 99;
+  transition: transform .2s ease;
+  &:hover { transform: scale(1.1); }
+}
+
+/* --- 顶部阅读进度条 --- */
+.reading-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  width: 0;
+  background: var(--accent);
+  z-index: 200;
+  transition: width .1s ease;
+}
+
+/* --- 文章目录 TOC（桌面右侧浮动） --- */
+.post-toc {
+  position: fixed;
+  top: 120px;
+  right: 20px;
+  width: 200px;
+  max-height: 70vh;
+  overflow-y: auto;
+  padding: 14px 16px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  font-size: 14px;
+  z-index: 50;
+
+  .post-toc-title {
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: var(--accent);
+  }
+  .post-toc-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .toc-item {
+    margin: 4px 0;
+    a {
+      color: var(--text-muted);
+      text-decoration: none;
+      &:hover { color: var(--accent); }
+    }
+  }
+  .toc-sub { padding-left: 14px; font-size: 13px; }
+
+  /* 屏幕较窄时隐藏，避免遮挡正文 */
+  @media (max-width: 1200px) { display: none !important; }
+}
+
+/* --- Giscus 评论容器 --- */
+.giscus-wrapper {
+  margin-top: 2.5em;
+  padding-top: 1.5em;
+  border-top: 1px solid var(--border);
+}
+
+/* 卡片/分隔线随暗色变化 */
+.general_block,
+.zhifucode {
+  border-color: var(--border);
+  background: var(--bg-card);
+}
+hr { border-color: var(--border); }
